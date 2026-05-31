@@ -1,7 +1,7 @@
 {
   "title": "Angela's German Hits",
   "spotify_url": "https://open.spotify.com/playlist/0FI1TfeiurDFLuV141SBJm?si=140363f96e8a4315",
-  "generated_at": "2026-05-31T15:11:44+00:00",
+  "generated_at": "2026-05-31T15:15:25+00:00",
   "playlist": {
     "name": "Angela's German Hits",
     "image_url": "https://mosaic.scdn.co/640/ab67616d00001e023110ac6b32c463f398a9e051ab67616d00001e028b7b2e11970c698f38821452ab67616d00001e02a4cfc9a0cfa7a112bf21e8beab67616d00001e02d21c9fb9186da390f8269c6e",
@@ -10,13 +10,13 @@
   },
   "tracks": [
     {
-      "spotify_id": "5YVAa5A1w987AIeCn6I0UI",
-      "artist": "Wir sind Helden",
-      "title": "Guten Tag",
-      "duration_s": 215,
-      "spotify_url": "https://open.spotify.com/track/5YVAa5A1w987AIeCn6I0UI",
-      "youtube_id": "p0tSGd_I_YM",
-      "youtube_url": "https://www.youtube.com/watch?v=p0tSGd_I_YM",
+      "spotify_id": "5QRkWkMabF6HJmQQm2HBVX",
+      "artist": "Sportfreunde Stiller",
+      "title": "Ein Kompliment",
+      "duration_s": 198,
+      "spotify_url": "https://open.spotify.com/track/5QRkWkMabF6HJmQQm2HBVX",
+      "youtube_id": "yA07pzRLwqI",
+      "youtube_url": "https://www.youtube.com/watch?v=yA07pzRLwqI",
       "youtube_title": "",
       "youtube_uploader": "",
       "youtube_duration_s": null,
@@ -27,13 +27,30 @@
       "overridden": false
     },
     {
-      "spotify_id": "5QRkWkMabF6HJmQQm2HBVX",
-      "artist": "Sportfreunde Stiller",
-      "title": "Ein Kompliment",
-      "duration_s": 198,
-      "spotify_url": "https://open.spotify.com/track/5QRkWkMabF6HJmQQm2HBVX",
-      "youtube_id": "yA07pzRLwqI",
-      "youtube_url": "https://www.youtube.com/watch?v=yA07pzRLwqI",
+      "spotify_id": "4hYinIaRxdaoEFSQni6K6I",
+      "artist": "Wir sind Helden",
+      "title": "Nur ein Wort",
+      "duration_s": 236,
+      "spotify_url": "https://open.spotify.com/track/4hYinIaRxdaoEFSQni6K6I",
+      "youtube_id": "uyWQmebx6gc",
+      "youtube_url": "https://www.youtube.com/watch?v=uyWQmebx6gc",
+      "youtube_title": "",
+      "youtube_uploader": "",
+      "youtube_duration_s": null,
+      "verified": false,
+      "verification_notes": [
+        "YouTube metadata unavailable — couldn't verify"
+      ],
+      "overridden": false
+    },
+    {
+      "spotify_id": "5YVAa5A1w987AIeCn6I0UI",
+      "artist": "Wir sind Helden",
+      "title": "Guten Tag",
+      "duration_s": 215,
+      "spotify_url": "https://open.spotify.com/track/5YVAa5A1w987AIeCn6I0UI",
+      "youtube_id": "p0tSGd_I_YM",
+      "youtube_url": "https://www.youtube.com/watch?v=p0tSGd_I_YM",
       "youtube_title": "",
       "youtube_uploader": "",
       "youtube_duration_s": null,
@@ -61,30 +78,13 @@
       "overridden": false
     },
     {
-      "spotify_id": "4hYinIaRxdaoEFSQni6K6I",
-      "artist": "Wir sind Helden",
-      "title": "Nur ein Wort",
-      "duration_s": 236,
-      "spotify_url": "https://open.spotify.com/track/4hYinIaRxdaoEFSQni6K6I",
-      "youtube_id": "uyWQmebx6gc",
-      "youtube_url": "https://www.youtube.com/watch?v=uyWQmebx6gc",
-      "youtube_title": "",
-      "youtube_uploader": "",
-      "youtube_duration_s": null,
-      "verified": false,
-      "verification_notes": [
-        "YouTube metadata unavailable — couldn't verify"
-      ],
-      "overridden": false
-    },
-    {
-      "spotify_id": "01y4v0GVDAFwj9hjxTMshg",
-      "artist": "Jan Delay",
-      "title": "Klar",
-      "duration_s": 295,
-      "spotify_url": "https://open.spotify.com/track/01y4v0GVDAFwj9hjxTMshg",
-      "youtube_id": "b882EyGggNo",
-      "youtube_url": "https://www.youtube.com/watch?v=b882EyGggNo",
+      "spotify_id": "31sD77U64ym70wYEMpnSrQ",
+      "artist": "Deichkind",
+      "title": "Remmidemmi (Yippie Yippie Yeah)",
+      "duration_s": 281,
+      "spotify_url": "https://open.spotify.com/track/31sD77U64ym70wYEMpnSrQ",
+      "youtube_id": "45fgIwR3LqY",
+      "youtube_url": "https://www.youtube.com/watch?v=45fgIwR3LqY",
       "youtube_title": "",
       "youtube_uploader": "",
       "youtube_duration_s": null,
@@ -112,23 +112,6 @@
       "overridden": false
     },
     {
-      "spotify_id": "31sD77U64ym70wYEMpnSrQ",
-      "artist": "Deichkind",
-      "title": "Remmidemmi (Yippie Yippie Yeah)",
-      "duration_s": 281,
-      "spotify_url": "https://open.spotify.com/track/31sD77U64ym70wYEMpnSrQ",
-      "youtube_id": "45fgIwR3LqY",
-      "youtube_url": "https://www.youtube.com/watch?v=45fgIwR3LqY",
-      "youtube_title": "",
-      "youtube_uploader": "",
-      "youtube_duration_s": null,
-      "verified": false,
-      "verification_notes": [
-        "YouTube metadata unavailable — couldn't verify"
-      ],
-      "overridden": false
-    },
-    {
       "spotify_id": "6b2vkaiDawOcupyDxNNCba",
       "artist": "Seeed",
       "title": "Dancehall Caballeros",
@@ -146,19 +129,19 @@
       "overridden": false
     },
     {
-      "spotify_id": "3jXSoi9cDNPICj9YGYyHqB",
-      "artist": "Blümchen",
-      "title": "Kleiner Satellit",
-      "duration_s": 239,
-      "spotify_url": "https://open.spotify.com/track/3jXSoi9cDNPICj9YGYyHqB",
-      "youtube_id": null,
-      "youtube_url": null,
-      "youtube_title": null,
-      "youtube_uploader": null,
+      "spotify_id": "01y4v0GVDAFwj9hjxTMshg",
+      "artist": "Jan Delay",
+      "title": "Klar",
+      "duration_s": 295,
+      "spotify_url": "https://open.spotify.com/track/01y4v0GVDAFwj9hjxTMshg",
+      "youtube_id": "b882EyGggNo",
+      "youtube_url": "https://www.youtube.com/watch?v=b882EyGggNo",
+      "youtube_title": "",
+      "youtube_uploader": "",
       "youtube_duration_s": null,
       "verified": false,
       "verification_notes": [
-        "no YouTube match found"
+        "YouTube metadata unavailable — couldn't verify"
       ],
       "overridden": false
     },
@@ -168,23 +151,6 @@
       "title": "Aufstehn! - feat. CeeLo Green",
       "duration_s": 230,
       "spotify_url": "https://open.spotify.com/track/1a2OetShjC5XxrNN7uUTvP",
-      "youtube_id": null,
-      "youtube_url": null,
-      "youtube_title": null,
-      "youtube_uploader": null,
-      "youtube_duration_s": null,
-      "verified": false,
-      "verification_notes": [
-        "no YouTube match found"
-      ],
-      "overridden": false
-    },
-    {
-      "spotify_id": "4vHzRFV4hTIKQbFzw9aZtI",
-      "artist": "Tic Tac Toe",
-      "title": "Mr. Wichtig",
-      "duration_s": 221,
-      "spotify_url": "https://open.spotify.com/track/4vHzRFV4hTIKQbFzw9aZtI",
       "youtube_id": null,
       "youtube_url": null,
       "youtube_title": null,
@@ -214,6 +180,40 @@
       "overridden": false
     },
     {
+      "spotify_id": "3jXSoi9cDNPICj9YGYyHqB",
+      "artist": "Blümchen",
+      "title": "Kleiner Satellit",
+      "duration_s": 239,
+      "spotify_url": "https://open.spotify.com/track/3jXSoi9cDNPICj9YGYyHqB",
+      "youtube_id": null,
+      "youtube_url": null,
+      "youtube_title": null,
+      "youtube_uploader": null,
+      "youtube_duration_s": null,
+      "verified": false,
+      "verification_notes": [
+        "no YouTube match found"
+      ],
+      "overridden": false
+    },
+    {
+      "spotify_id": "4vHzRFV4hTIKQbFzw9aZtI",
+      "artist": "Tic Tac Toe",
+      "title": "Mr. Wichtig",
+      "duration_s": 221,
+      "spotify_url": "https://open.spotify.com/track/4vHzRFV4hTIKQbFzw9aZtI",
+      "youtube_id": null,
+      "youtube_url": null,
+      "youtube_title": null,
+      "youtube_uploader": null,
+      "youtube_duration_s": null,
+      "verified": false,
+      "verification_notes": [
+        "no YouTube match found"
+      ],
+      "overridden": false
+    },
+    {
       "spotify_id": "4YqzixZWs5ZwjnjuhrcJQ4",
       "artist": "Selig",
       "title": "Wir werden uns wiedersehen",
@@ -227,6 +227,23 @@
       "verified": false,
       "verification_notes": [
         "no YouTube match found"
+      ],
+      "overridden": false
+    },
+    {
+      "spotify_id": "4aFIMli7GhMfRXdR17UjlA",
+      "artist": "AnnenMayKantereit",
+      "title": "Tommi",
+      "duration_s": 279,
+      "spotify_url": "https://open.spotify.com/track/4aFIMli7GhMfRXdR17UjlA",
+      "youtube_id": "26TRse93pAY",
+      "youtube_url": "https://www.youtube.com/watch?v=26TRse93pAY",
+      "youtube_title": "",
+      "youtube_uploader": "",
+      "youtube_duration_s": null,
+      "verified": false,
+      "verification_notes": [
+        "YouTube metadata unavailable — couldn't verify"
       ],
       "overridden": false
     },
@@ -255,23 +272,6 @@
       "spotify_url": "https://open.spotify.com/track/22CpeaLcxTA6tMe5grCUee",
       "youtube_id": "aRtojSdgtAI",
       "youtube_url": "https://www.youtube.com/watch?v=aRtojSdgtAI",
-      "youtube_title": "",
-      "youtube_uploader": "",
-      "youtube_duration_s": null,
-      "verified": false,
-      "verification_notes": [
-        "YouTube metadata unavailable — couldn't verify"
-      ],
-      "overridden": false
-    },
-    {
-      "spotify_id": "4aFIMli7GhMfRXdR17UjlA",
-      "artist": "AnnenMayKantereit",
-      "title": "Tommi",
-      "duration_s": 279,
-      "spotify_url": "https://open.spotify.com/track/4aFIMli7GhMfRXdR17UjlA",
-      "youtube_id": "26TRse93pAY",
-      "youtube_url": "https://www.youtube.com/watch?v=26TRse93pAY",
       "youtube_title": "",
       "youtube_uploader": "",
       "youtube_duration_s": null,
@@ -316,23 +316,6 @@
       "overridden": false
     },
     {
-      "spotify_id": "3FwxpJdlexIR6MeTT56HAm",
-      "artist": "CRO",
-      "title": "Easy",
-      "duration_s": 173,
-      "spotify_url": "https://open.spotify.com/track/3FwxpJdlexIR6MeTT56HAm",
-      "youtube_id": null,
-      "youtube_url": null,
-      "youtube_title": null,
-      "youtube_uploader": null,
-      "youtube_duration_s": null,
-      "verified": false,
-      "verification_notes": [
-        "no YouTube match found"
-      ],
-      "overridden": false
-    },
-    {
       "spotify_id": "21aT5lIYHjyBIFrXNbNY5U",
       "artist": "Echt",
       "title": "Du trägst keine Liebe in dir",
@@ -350,6 +333,23 @@
       "overridden": false
     },
     {
+      "spotify_id": "3FwxpJdlexIR6MeTT56HAm",
+      "artist": "CRO",
+      "title": "Easy",
+      "duration_s": 173,
+      "spotify_url": "https://open.spotify.com/track/3FwxpJdlexIR6MeTT56HAm",
+      "youtube_id": null,
+      "youtube_url": null,
+      "youtube_title": null,
+      "youtube_uploader": null,
+      "youtube_duration_s": null,
+      "verified": false,
+      "verification_notes": [
+        "no YouTube match found"
+      ],
+      "overridden": false
+    },
+    {
       "spotify_id": "13FlxJxlFrtgphJb94sFAM",
       "artist": "Von Wegen Lisbeth",
       "title": "Chérie",
@@ -357,23 +357,6 @@
       "spotify_url": "https://open.spotify.com/track/13FlxJxlFrtgphJb94sFAM",
       "youtube_id": "c4HEPw10mio",
       "youtube_url": "https://www.youtube.com/watch?v=c4HEPw10mio",
-      "youtube_title": "",
-      "youtube_uploader": "",
-      "youtube_duration_s": null,
-      "verified": false,
-      "verification_notes": [
-        "YouTube metadata unavailable — couldn't verify"
-      ],
-      "overridden": false
-    },
-    {
-      "spotify_id": "0l2VxuE9VO8oaPg9UkVRYj",
-      "artist": "Die Höchste Eisenbahn",
-      "title": "Vergangenheit",
-      "duration_s": 289,
-      "spotify_url": "https://open.spotify.com/track/0l2VxuE9VO8oaPg9UkVRYj",
-      "youtube_id": "Xsx8BMW5Ih8",
-      "youtube_url": "https://www.youtube.com/watch?v=Xsx8BMW5Ih8",
       "youtube_title": "",
       "youtube_uploader": "",
       "youtube_duration_s": null,
@@ -401,6 +384,23 @@
       "overridden": false
     },
     {
+      "spotify_id": "0l2VxuE9VO8oaPg9UkVRYj",
+      "artist": "Die Höchste Eisenbahn",
+      "title": "Vergangenheit",
+      "duration_s": 289,
+      "spotify_url": "https://open.spotify.com/track/0l2VxuE9VO8oaPg9UkVRYj",
+      "youtube_id": "Xsx8BMW5Ih8",
+      "youtube_url": "https://www.youtube.com/watch?v=Xsx8BMW5Ih8",
+      "youtube_title": "",
+      "youtube_uploader": "",
+      "youtube_duration_s": null,
+      "verified": false,
+      "verification_notes": [
+        "YouTube metadata unavailable — couldn't verify"
+      ],
+      "overridden": false
+    },
+    {
       "spotify_id": "55M8uEwBvW9VuPjPZJsGnA",
       "artist": "Haftbefehl",
       "title": "Chabos wissen wer der Babo ist",
@@ -418,19 +418,19 @@
       "overridden": false
     },
     {
-      "spotify_id": "2AXOg2WMjJt8Os7M3b589T",
-      "artist": "Haftbefehl",
-      "title": "Ich rolle mit meim Besten - Babos Remix",
-      "duration_s": 189,
-      "spotify_url": "https://open.spotify.com/track/2AXOg2WMjJt8Os7M3b589T",
-      "youtube_id": null,
-      "youtube_url": null,
-      "youtube_title": null,
-      "youtube_uploader": null,
+      "spotify_id": "0pXN3MXGemL7dmLuLtAk7z",
+      "artist": "Wanda",
+      "title": "Bologna",
+      "duration_s": 214,
+      "spotify_url": "https://open.spotify.com/track/0pXN3MXGemL7dmLuLtAk7z",
+      "youtube_id": "J4xLGK9CM74",
+      "youtube_url": "https://www.youtube.com/watch?v=J4xLGK9CM74",
+      "youtube_title": "",
+      "youtube_uploader": "",
       "youtube_duration_s": null,
       "verified": false,
       "verification_notes": [
-        "no YouTube match found"
+        "YouTube metadata unavailable — couldn't verify"
       ],
       "overridden": false
     },
@@ -442,23 +442,6 @@
       "spotify_url": "https://open.spotify.com/track/3jxxYgf0lK155eeuSO5sH1",
       "youtube_id": "3seOou4qFyU",
       "youtube_url": "https://www.youtube.com/watch?v=3seOou4qFyU",
-      "youtube_title": "",
-      "youtube_uploader": "",
-      "youtube_duration_s": null,
-      "verified": false,
-      "verification_notes": [
-        "YouTube metadata unavailable — couldn't verify"
-      ],
-      "overridden": false
-    },
-    {
-      "spotify_id": "0pXN3MXGemL7dmLuLtAk7z",
-      "artist": "Wanda",
-      "title": "Bologna",
-      "duration_s": 214,
-      "spotify_url": "https://open.spotify.com/track/0pXN3MXGemL7dmLuLtAk7z",
-      "youtube_id": "J4xLGK9CM74",
-      "youtube_url": "https://www.youtube.com/watch?v=J4xLGK9CM74",
       "youtube_title": "",
       "youtube_uploader": "",
       "youtube_duration_s": null,
@@ -482,6 +465,23 @@
       "verified": false,
       "verification_notes": [
         "YouTube metadata unavailable — couldn't verify"
+      ],
+      "overridden": false
+    },
+    {
+      "spotify_id": "2AXOg2WMjJt8Os7M3b589T",
+      "artist": "Haftbefehl",
+      "title": "Ich rolle mit meim Besten - Babos Remix",
+      "duration_s": 189,
+      "spotify_url": "https://open.spotify.com/track/2AXOg2WMjJt8Os7M3b589T",
+      "youtube_id": null,
+      "youtube_url": null,
+      "youtube_title": null,
+      "youtube_uploader": null,
+      "youtube_duration_s": null,
+      "verified": false,
+      "verification_notes": [
+        "no YouTube match found"
       ],
       "overridden": false
     },
