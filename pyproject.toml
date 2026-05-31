@@ -6,6 +6,7 @@ requires-python = ">=3.11"
 dependencies = [
     "spotdl>=4.2.0",
     "pyyaml>=6.0.1",
+    "ytmusicapi>=1.7.0",
 ]
 
 [project.scripts]
