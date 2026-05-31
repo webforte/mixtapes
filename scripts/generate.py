@@ -358,9 +358,10 @@ def render_mixtape_md(
     spotify_url: str,
     playlist_metadata: dict[str, Any] | None = None,
 ) -> str:
-    """Render the per-mixtape Markdown page (tracklist + watch_videos URL + review section)."""
+    """Render the per-mixtape Markdown page for the recipient (verification UI is kept in the JSON manifest, not here)."""
     meta = playlist_metadata or {}
     image_url = meta.get("image_url") or ""
+    display_recipient = " ".join(word.capitalize() for word in recipient.split("-")) or recipient
 
     lines: list[str] = [
         "---",
@@ -376,16 +377,14 @@ def render_mixtape_md(
         lines.append("")
     lines.append(f"# {title}")
     lines.append("")
-    lines.append(
-        f"_Curated for **{recipient}** · generated {datetime.now(timezone.utc).strftime('%Y-%m-%d')}._"
-    )
+    lines.append(f"_Curated for **{display_recipient}**._")
     lines.append("")
 
     yt_ids = [e.youtube_id for e in entries if e.youtube_id]
     if yt_ids:
         watch_ids = yt_ids[:WATCH_VIDEOS_CAP]
         watch_url = "https://www.youtube.com/watch_videos?video_ids=" + ",".join(watch_ids)
-        lines.append(f"**[▶ Play as YouTube playlist]({watch_url})**")
+        lines.append(f"**[▶ Play on YouTube]({watch_url})**")
         if len(yt_ids) > WATCH_VIDEOS_CAP:
             lines.append("")
             lines.append(
@@ -393,45 +392,27 @@ def render_mixtape_md(
             )
         lines.append("")
 
-    lines.append("| # | Artist | Title | Duration | YouTube | ✓ |")
-    lines.append("|---|--------|-------|----------|---------|---|")
+    lines.append(f"[Open on Spotify]({spotify_url})")
+    lines.append("")
+    lines.append(
+        "_To save this as a permanent YouTube playlist on your own account, "
+        "use a migration tool like [TuneMyMusic](https://www.tunemymusic.com/transfer) "
+        "or [Soundiiz](https://soundiiz.com/transfer/spotify-to-youtube). "
+        "Paste the Spotify link above as the source._"
+    )
+    lines.append("")
+
+    lines.append("| # | Artist | Title | Duration | YouTube |")
+    lines.append("|---|--------|-------|----------|---------|")
     for i, e in enumerate(entries, start=1):
-        mark = "✓" if e.verified else "⚠"
         yt_cell = f"[link]({e.youtube_url})" if e.youtube_url else "—"
         artist = e.artist.replace("|", "\\|")
         track = e.title.replace("|", "\\|")
         lines.append(
-            f"| {i} | {artist} | {track} | {format_duration(e.duration_s)} | {yt_cell} | {mark} |"
+            f"| {i} | {artist} | {track} | {format_duration(e.duration_s)} | {yt_cell} |"
         )
 
-    unverified = [e for e in entries if not e.verified]
-    if unverified:
-        lines.extend([
-            "",
-            "## ⚠ Needs review",
-            "",
-        ])
-        for e in unverified:
-            lines.append(f"- **{e.artist} — {e.title}**")
-            for note in e.verification_notes:
-                lines.append(f"  - {note}")
-            if e.youtube_url:
-                lines.append(
-                    f"  - matched: [{e.youtube_title or e.youtube_url}]({e.youtube_url}) — uploader `{e.youtube_uploader or 'unknown'}`"
-                )
-            lines.append(f"  - spotify id: `{e.spotify_id}`")
-        lines.extend([
-            "",
-            f"To pin a different video, add an entry to `overrides/{recipient}/{slug}.yaml` and re-run.",
-        ])
-
-    lines.extend([
-        "",
-        "---",
-        "",
-        f"_[Source playlist on Spotify]({spotify_url})_",
-        "",
-    ])
+    lines.append("")
     return "\n".join(lines)
 
 
