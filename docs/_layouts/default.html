@@ -1,27 +1,23 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'en-US' }}">
+<html lang="{{ site.lang | default: 'en' }}">
   <head>
-    <meta charset='UTF-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    {% seo %}
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
     {% include head-custom.html %}
   </head>
   <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
-
-    <header class="page-header" role="banner">
-      <img class="page-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="">
-      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+    <header class="site-header">
+      <a class="wordmark" href="{{ '/' | relative_url }}">Mixtapes</a>
     </header>
 
-    <main id="content" class="main-content" role="main">
+    <main class="site-main">
       {{ content }}
-
-      <footer class="site-footer"></footer>
     </main>
+
+    <footer class="site-footer">
+      <img class="footer-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="">
+    </footer>
   </body>
 </html>

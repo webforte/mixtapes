@@ -1,0 +1,182 @@
+:root {
+  --bg: #ffffff;
+  --fg: #09090b;
+  --muted: #71717a;
+  --muted-bg: #f4f4f5;
+  --border: #e4e4e7;
+  --radius: 8px;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--border);
+  transition: text-decoration-color 120ms ease;
+}
+
+a:hover { text-decoration-color: var(--fg); }
+
+/* ---------- Header ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 0.85rem 1.5rem;
+}
+
+.wordmark {
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Main ---------- */
+
+.site-main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 0;
+}
+
+.site-main img {
+  display: block;
+  max-width: 240px;
+  height: auto;
+  border-radius: var(--radius);
+  margin: 0 0 2rem;
+}
+
+.site-main h1 {
+  font-size: 30px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+}
+
+.site-main h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 2.5rem 0 0.75rem;
+}
+
+.site-main p {
+  margin: 0.75rem 0;
+}
+
+.site-main p em {
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* The first paragraph after the title (the "Curated for ..." line)
+   gets a touch more breathing room before the action paragraph. */
+.site-main h1 + p { margin-bottom: 1.5rem; }
+
+/* ---------- Tables ---------- */
+
+.site-main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 2rem;
+  font-size: 14px;
+}
+
+.site-main th,
+.site-main td {
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.site-main th {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom-color: var(--fg);
+}
+
+.site-main tbody tr:last-child td { border-bottom: 0; }
+
+/* Index column: muted, narrow, tabular */
+.site-main td:first-child {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  width: 2rem;
+}
+
+/* Duration column: tabular, muted, right-side */
+.site-main td:nth-last-child(2) {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* Action column (the YouTube ▶ link): right-aligned, narrow */
+.site-main th:last-child,
+.site-main td:last-child {
+  text-align: right;
+  width: 2.5rem;
+}
+
+.site-main td a {
+  text-decoration: none;
+  color: var(--muted);
+}
+.site-main td a:hover { color: var(--fg); }
+
+/* ---------- Index pages (recipient & top) ---------- */
+
+.site-main ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.site-main ul li {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-main ul li a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  padding: 5rem 0 3rem;
+  text-align: center;
+}
+
+.footer-logo {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  opacity: 0.4;
+  transition: opacity 200ms ease;
+}
+
+.footer-logo:hover { opacity: 0.7; }

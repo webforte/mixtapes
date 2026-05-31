@@ -371,9 +371,7 @@ def render_mixtape_md(
         "",
     ]
     if image_url:
-        # HTML <img> so we can control width without depending on Markdown image attributes.
-        safe_alt = title.replace('"', "&quot;")
-        lines.append(f'<img src="{image_url}" alt="{safe_alt}" width="320" />')
+        lines.append(f"![]({image_url})")
         lines.append("")
     lines.append(f"# {title}")
     lines.append("")
@@ -381,31 +379,32 @@ def render_mixtape_md(
     lines.append("")
 
     yt_ids = [e.youtube_id for e in entries if e.youtube_id]
+    actions: list[str] = []
     if yt_ids:
         watch_ids = yt_ids[:WATCH_VIDEOS_CAP]
         watch_url = "https://www.youtube.com/watch_videos?video_ids=" + ",".join(watch_ids)
-        lines.append(f"**[▶ Play on YouTube]({watch_url})**")
-        if len(yt_ids) > WATCH_VIDEOS_CAP:
-            lines.append("")
-            lines.append(
-                f"_(First {WATCH_VIDEOS_CAP} of {len(yt_ids)} — YouTube's ad-hoc playlist URL is capped at {WATCH_VIDEOS_CAP}.)_"
-            )
+        actions.append(f"**▶ [Play on YouTube]({watch_url})**")
+    actions.append(f"[Open on Spotify]({spotify_url})")
+    lines.append(" · ".join(actions))
+    lines.append("")
+
+    if yt_ids and len(yt_ids) > WATCH_VIDEOS_CAP:
+        lines.append(
+            f"_First {WATCH_VIDEOS_CAP} of {len(yt_ids)} — YouTube's ad-hoc playlist URL is capped at {WATCH_VIDEOS_CAP}._"
+        )
         lines.append("")
 
-    lines.append(f"[Open on Spotify]({spotify_url})")
-    lines.append("")
     lines.append(
-        "_To save this as a permanent YouTube playlist on your own account, "
-        "use a migration tool like [TuneMyMusic](https://www.tunemymusic.com/transfer) "
-        "or [Soundiiz](https://soundiiz.com/transfer/spotify-to-youtube). "
-        "Paste the Spotify link above as the source._"
+        "_Want it on your own YouTube account? Migrate via "
+        "[TuneMyMusic](https://www.tunemymusic.com/transfer) or "
+        "[Soundiiz](https://soundiiz.com/transfer/spotify-to-youtube) with the Spotify link above._"
     )
     lines.append("")
 
-    lines.append("| # | Artist | Title | Duration | YouTube |")
-    lines.append("|---|--------|-------|----------|---------|")
+    lines.append("| # | Artist | Title | Duration |   |")
+    lines.append("|---|--------|-------|----------|---|")
     for i, e in enumerate(entries, start=1):
-        yt_cell = f"[link]({e.youtube_url})" if e.youtube_url else "—"
+        yt_cell = f"[▶]({e.youtube_url})" if e.youtube_url else "—"
         artist = e.artist.replace("|", "\\|")
         track = e.title.replace("|", "\\|")
         lines.append(
