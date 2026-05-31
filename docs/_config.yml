@@ -1,0 +1,11 @@
+title: Mixtapes
+description: Hand-curated YouTube mixtapes
+theme: jekyll-theme-cayman
+markdown: kramdown
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - "*.md"

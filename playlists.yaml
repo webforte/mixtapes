@@ -1,0 +1,12 @@
+# Source of truth for all mixtapes.
+# Edit this file and push to main — GitHub Actions regenerates everything.
+#
+# Schema:
+#   tenants:
+#     <recipient-slug>:
+#       mixtapes:
+#         - slug: <mixtape-slug>      # becomes docs/<recipient-slug>/<slug>.md
+#           title: "<display title>"
+#           spotify_url: "https://open.spotify.com/playlist/..."
+
+tenants: {}
