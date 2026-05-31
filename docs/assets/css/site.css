@@ -46,12 +46,9 @@ a:hover { text-decoration-color: var(--fg); }
   gap: 0.5rem;
   font-weight: 600;
   font-size: 14px;
-  text-decoration: none;
   letter-spacing: -0.01em;
-  transition: opacity 120ms ease;
+  color: var(--fg);
 }
-
-.wordmark:hover { opacity: 0.65; }
 
 .wordmark-logo {
   width: 22px;

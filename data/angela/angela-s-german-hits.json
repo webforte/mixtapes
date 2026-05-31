@@ -1,7 +1,7 @@
 {
   "title": "Angela's German Hits",
   "spotify_url": "https://open.spotify.com/playlist/0FI1TfeiurDFLuV141SBJm?si=140363f96e8a4315",
-  "generated_at": "2026-05-31T16:31:07+00:00",
+  "generated_at": "2026-05-31T16:46:09+00:00",
   "playlist": {
     "name": "Angela's German Hits",
     "image_url": "https://mosaic.scdn.co/640/ab67616d00001e023110ac6b32c463f398a9e051ab67616d00001e028b7b2e11970c698f38821452ab67616d00001e02a4cfc9a0cfa7a112bf21e8beab67616d00001e02d21c9fb9186da390f8269c6e",
@@ -10,17 +10,6 @@
   },
   "tracks": [
     {
-      "spotify_id": "0ys1g8PTTs6ADeDp2h1xpd",
-      "artist": "Deichkind",
-      "title": "Bon voyage (feat. Nina)",
-      "duration_s": 207,
-      "spotify_url": "https://open.spotify.com/track/0ys1g8PTTs6ADeDp2h1xpd",
-      "youtube_id": "6HtB-HJPhBY",
-      "youtube_url": "https://www.youtube.com/watch?v=6HtB-HJPhBY",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
       "spotify_id": "5YVAa5A1w987AIeCn6I0UI",
       "artist": "Wir sind Helden",
       "title": "Guten Tag",
@@ -28,17 +17,6 @@
       "spotify_url": "https://open.spotify.com/track/5YVAa5A1w987AIeCn6I0UI",
       "youtube_id": "p0tSGd_I_YM",
       "youtube_url": "https://www.youtube.com/watch?v=p0tSGd_I_YM",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
-      "spotify_id": "5QRkWkMabF6HJmQQm2HBVX",
-      "artist": "Sportfreunde Stiller",
-      "title": "Ein Kompliment",
-      "duration_s": 198,
-      "spotify_url": "https://open.spotify.com/track/5QRkWkMabF6HJmQQm2HBVX",
-      "youtube_id": "yA07pzRLwqI",
-      "youtube_url": "https://www.youtube.com/watch?v=yA07pzRLwqI",
       "source": "ytmusic",
       "overridden": false
     },
@@ -54,13 +32,24 @@
       "overridden": false
     },
     {
-      "spotify_id": "31sD77U64ym70wYEMpnSrQ",
+      "spotify_id": "0ys1g8PTTs6ADeDp2h1xpd",
       "artist": "Deichkind",
-      "title": "Remmidemmi (Yippie Yippie Yeah)",
-      "duration_s": 281,
-      "spotify_url": "https://open.spotify.com/track/31sD77U64ym70wYEMpnSrQ",
-      "youtube_id": "45fgIwR3LqY",
-      "youtube_url": "https://www.youtube.com/watch?v=45fgIwR3LqY",
+      "title": "Bon voyage (feat. Nina)",
+      "duration_s": 207,
+      "spotify_url": "https://open.spotify.com/track/0ys1g8PTTs6ADeDp2h1xpd",
+      "youtube_id": "6HtB-HJPhBY",
+      "youtube_url": "https://www.youtube.com/watch?v=6HtB-HJPhBY",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
+      "spotify_id": "5QRkWkMabF6HJmQQm2HBVX",
+      "artist": "Sportfreunde Stiller",
+      "title": "Ein Kompliment",
+      "duration_s": 198,
+      "spotify_url": "https://open.spotify.com/track/5QRkWkMabF6HJmQQm2HBVX",
+      "youtube_id": "yA07pzRLwqI",
+      "youtube_url": "https://www.youtube.com/watch?v=yA07pzRLwqI",
       "source": "ytmusic",
       "overridden": false
     },
@@ -87,6 +76,17 @@
       "overridden": false
     },
     {
+      "spotify_id": "31sD77U64ym70wYEMpnSrQ",
+      "artist": "Deichkind",
+      "title": "Remmidemmi (Yippie Yippie Yeah)",
+      "duration_s": 281,
+      "spotify_url": "https://open.spotify.com/track/31sD77U64ym70wYEMpnSrQ",
+      "youtube_id": "45fgIwR3LqY",
+      "youtube_url": "https://www.youtube.com/watch?v=45fgIwR3LqY",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
       "spotify_id": "6b2vkaiDawOcupyDxNNCba",
       "artist": "Seeed",
       "title": "Dancehall Caballeros",
@@ -94,17 +94,6 @@
       "spotify_url": "https://open.spotify.com/track/6b2vkaiDawOcupyDxNNCba",
       "youtube_id": "_kSRrM9BKxg",
       "youtube_url": "https://www.youtube.com/watch?v=_kSRrM9BKxg",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
-      "spotify_id": "1a2OetShjC5XxrNN7uUTvP",
-      "artist": "Seeed",
-      "title": "Aufstehn! - feat. CeeLo Green",
-      "duration_s": 230,
-      "spotify_url": "https://open.spotify.com/track/1a2OetShjC5XxrNN7uUTvP",
-      "youtube_id": "J5z34qDGr6k",
-      "youtube_url": "https://www.youtube.com/watch?v=J5z34qDGr6k",
       "source": "ytmusic",
       "overridden": false
     },
@@ -125,8 +114,8 @@
       "title": "Mr. Wichtig",
       "duration_s": 221,
       "spotify_url": "https://open.spotify.com/track/4vHzRFV4hTIKQbFzw9aZtI",
-      "youtube_id": "85LZ7Y0P5dI",
-      "youtube_url": "https://www.youtube.com/watch?v=85LZ7Y0P5dI",
+      "youtube_id": "05x_ApQpevA",
+      "youtube_url": "https://www.youtube.com/watch?v=05x_ApQpevA",
       "source": "ytmusic",
       "overridden": false
     },
@@ -136,41 +125,19 @@
       "title": "Ich wär so gern so blöd wie du",
       "duration_s": 230,
       "spotify_url": "https://open.spotify.com/track/6KzWkQmHEJKn7OjjY3DWOF",
-      "youtube_id": "iyky5-l73zE",
-      "youtube_url": "https://www.youtube.com/watch?v=iyky5-l73zE",
+      "youtube_id": "QukYHQRH3NM",
+      "youtube_url": "https://www.youtube.com/watch?v=QukYHQRH3NM",
       "source": "ytmusic",
       "overridden": false
     },
     {
-      "spotify_id": "3TeuBnVsmXcoapr3SlBFIy",
-      "artist": "AnnenMayKantereit",
-      "title": "Oft gefragt",
-      "duration_s": 178,
-      "spotify_url": "https://open.spotify.com/track/3TeuBnVsmXcoapr3SlBFIy",
-      "youtube_id": "cu2Xodoq3u4",
-      "youtube_url": "https://www.youtube.com/watch?v=cu2Xodoq3u4",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
-      "spotify_id": "4YqzixZWs5ZwjnjuhrcJQ4",
-      "artist": "Selig",
-      "title": "Wir werden uns wiedersehen",
-      "duration_s": 241,
-      "spotify_url": "https://open.spotify.com/track/4YqzixZWs5ZwjnjuhrcJQ4",
-      "youtube_id": "abk3Nf9mRtI",
-      "youtube_url": "https://www.youtube.com/watch?v=abk3Nf9mRtI",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
-      "spotify_id": "4aFIMli7GhMfRXdR17UjlA",
-      "artist": "AnnenMayKantereit",
-      "title": "Tommi",
-      "duration_s": 279,
-      "spotify_url": "https://open.spotify.com/track/4aFIMli7GhMfRXdR17UjlA",
-      "youtube_id": "26TRse93pAY",
-      "youtube_url": "https://www.youtube.com/watch?v=26TRse93pAY",
+      "spotify_id": "1a2OetShjC5XxrNN7uUTvP",
+      "artist": "Seeed",
+      "title": "Aufstehn! - feat. CeeLo Green",
+      "duration_s": 230,
+      "spotify_url": "https://open.spotify.com/track/1a2OetShjC5XxrNN7uUTvP",
+      "youtube_id": "J5z34qDGr6k",
+      "youtube_url": "https://www.youtube.com/watch?v=J5z34qDGr6k",
       "source": "ytmusic",
       "overridden": false
     },
@@ -186,35 +153,35 @@
       "overridden": false
     },
     {
-      "spotify_id": "3FwxpJdlexIR6MeTT56HAm",
-      "artist": "CRO",
-      "title": "Easy",
-      "duration_s": 173,
-      "spotify_url": "https://open.spotify.com/track/3FwxpJdlexIR6MeTT56HAm",
-      "youtube_id": "8GHc2Qxnc7M",
-      "youtube_url": "https://www.youtube.com/watch?v=8GHc2Qxnc7M",
+      "spotify_id": "4YqzixZWs5ZwjnjuhrcJQ4",
+      "artist": "Selig",
+      "title": "Wir werden uns wiedersehen",
+      "duration_s": 241,
+      "spotify_url": "https://open.spotify.com/track/4YqzixZWs5ZwjnjuhrcJQ4",
+      "youtube_id": "GNj7Oe8eq00",
+      "youtube_url": "https://www.youtube.com/watch?v=GNj7Oe8eq00",
       "source": "ytmusic",
       "overridden": false
     },
     {
-      "spotify_id": "5FP7gxNVjs6vTVcWoYYI9B",
+      "spotify_id": "3TeuBnVsmXcoapr3SlBFIy",
       "artist": "AnnenMayKantereit",
-      "title": "Hurra die Welt geht unter - Live",
-      "duration_s": 281,
-      "spotify_url": "https://open.spotify.com/track/5FP7gxNVjs6vTVcWoYYI9B",
-      "youtube_id": "vvFhAsvm9P0",
-      "youtube_url": "https://www.youtube.com/watch?v=vvFhAsvm9P0",
+      "title": "Oft gefragt",
+      "duration_s": 178,
+      "spotify_url": "https://open.spotify.com/track/3TeuBnVsmXcoapr3SlBFIy",
+      "youtube_id": "cu2Xodoq3u4",
+      "youtube_url": "https://www.youtube.com/watch?v=cu2Xodoq3u4",
       "source": "ytmusic",
       "overridden": false
     },
     {
-      "spotify_id": "0UIJh1j0OqO7se1J3JeX1X",
-      "artist": "Ton Steine Scherben",
-      "title": "Halt dich an deiner Liebe fest",
-      "duration_s": 419,
-      "spotify_url": "https://open.spotify.com/track/0UIJh1j0OqO7se1J3JeX1X",
-      "youtube_id": "N7VXrWhTf20",
-      "youtube_url": "https://www.youtube.com/watch?v=N7VXrWhTf20",
+      "spotify_id": "4aFIMli7GhMfRXdR17UjlA",
+      "artist": "AnnenMayKantereit",
+      "title": "Tommi",
+      "duration_s": 279,
+      "spotify_url": "https://open.spotify.com/track/4aFIMli7GhMfRXdR17UjlA",
+      "youtube_id": "26TRse93pAY",
+      "youtube_url": "https://www.youtube.com/watch?v=26TRse93pAY",
       "source": "ytmusic",
       "overridden": false
     },
@@ -230,13 +197,35 @@
       "overridden": false
     },
     {
-      "spotify_id": "0G7vexduCvboPyIGjJXQIC",
-      "artist": "Von Wegen Lisbeth",
-      "title": "Wenn du tanzt",
-      "duration_s": 230,
-      "spotify_url": "https://open.spotify.com/track/0G7vexduCvboPyIGjJXQIC",
-      "youtube_id": "lvJAwGi0pI0",
-      "youtube_url": "https://www.youtube.com/watch?v=lvJAwGi0pI0",
+      "spotify_id": "3FwxpJdlexIR6MeTT56HAm",
+      "artist": "CRO",
+      "title": "Easy",
+      "duration_s": 173,
+      "spotify_url": "https://open.spotify.com/track/3FwxpJdlexIR6MeTT56HAm",
+      "youtube_id": "8GHc2Qxnc7M",
+      "youtube_url": "https://www.youtube.com/watch?v=8GHc2Qxnc7M",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
+      "spotify_id": "0UIJh1j0OqO7se1J3JeX1X",
+      "artist": "Ton Steine Scherben",
+      "title": "Halt dich an deiner Liebe fest",
+      "duration_s": 419,
+      "spotify_url": "https://open.spotify.com/track/0UIJh1j0OqO7se1J3JeX1X",
+      "youtube_id": "N7VXrWhTf20",
+      "youtube_url": "https://www.youtube.com/watch?v=N7VXrWhTf20",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
+      "spotify_id": "5FP7gxNVjs6vTVcWoYYI9B",
+      "artist": "AnnenMayKantereit",
+      "title": "Hurra die Welt geht unter - Live",
+      "duration_s": 281,
+      "spotify_url": "https://open.spotify.com/track/5FP7gxNVjs6vTVcWoYYI9B",
+      "youtube_id": "vvFhAsvm9P0",
+      "youtube_url": "https://www.youtube.com/watch?v=vvFhAsvm9P0",
       "source": "ytmusic",
       "overridden": false
     },
@@ -257,8 +246,19 @@
       "title": "Chabos wissen wer der Babo ist",
       "duration_s": 139,
       "spotify_url": "https://open.spotify.com/track/55M8uEwBvW9VuPjPZJsGnA",
-      "youtube_id": "cHhRi7HW0jo",
-      "youtube_url": "https://www.youtube.com/watch?v=cHhRi7HW0jo",
+      "youtube_id": "whSR8IMXcng",
+      "youtube_url": "https://www.youtube.com/watch?v=whSR8IMXcng",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
+      "spotify_id": "0G7vexduCvboPyIGjJXQIC",
+      "artist": "Von Wegen Lisbeth",
+      "title": "Wenn du tanzt",
+      "duration_s": 230,
+      "spotify_url": "https://open.spotify.com/track/0G7vexduCvboPyIGjJXQIC",
+      "youtube_id": "lvJAwGi0pI0",
+      "youtube_url": "https://www.youtube.com/watch?v=lvJAwGi0pI0",
       "source": "ytmusic",
       "overridden": false
     },
@@ -274,28 +274,6 @@
       "overridden": false
     },
     {
-      "spotify_id": "2AXOg2WMjJt8Os7M3b589T",
-      "artist": "Haftbefehl",
-      "title": "Ich rolle mit meim Besten - Babos Remix",
-      "duration_s": 189,
-      "spotify_url": "https://open.spotify.com/track/2AXOg2WMjJt8Os7M3b589T",
-      "youtube_id": "6KY7SSgF9zA",
-      "youtube_url": "https://www.youtube.com/watch?v=6KY7SSgF9zA",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
-      "spotify_id": "0pXN3MXGemL7dmLuLtAk7z",
-      "artist": "Wanda",
-      "title": "Bologna",
-      "duration_s": 214,
-      "spotify_url": "https://open.spotify.com/track/0pXN3MXGemL7dmLuLtAk7z",
-      "youtube_id": "J4xLGK9CM74",
-      "youtube_url": "https://www.youtube.com/watch?v=J4xLGK9CM74",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
       "spotify_id": "2GsdNfuxE4tHS1Hj5hfVVf",
       "artist": "Nina Hagen",
       "title": "Du hast den Farbfilm vergessen",
@@ -307,6 +285,17 @@
       "overridden": false
     },
     {
+      "spotify_id": "2AXOg2WMjJt8Os7M3b589T",
+      "artist": "Haftbefehl",
+      "title": "Ich rolle mit meim Besten - Babos Remix",
+      "duration_s": 189,
+      "spotify_url": "https://open.spotify.com/track/2AXOg2WMjJt8Os7M3b589T",
+      "youtube_id": "_oj1X7meQ-I",
+      "youtube_url": "https://www.youtube.com/watch?v=_oj1X7meQ-I",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
       "spotify_id": "3jxxYgf0lK155eeuSO5sH1",
       "artist": "Lucilectric",
       "title": "Mädchen - Mädchen-Radio-Mix",
@@ -314,6 +303,17 @@
       "spotify_url": "https://open.spotify.com/track/3jxxYgf0lK155eeuSO5sH1",
       "youtube_id": "3seOou4qFyU",
       "youtube_url": "https://www.youtube.com/watch?v=3seOou4qFyU",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
+      "spotify_id": "0pXN3MXGemL7dmLuLtAk7z",
+      "artist": "Wanda",
+      "title": "Bologna",
+      "duration_s": 214,
+      "spotify_url": "https://open.spotify.com/track/0pXN3MXGemL7dmLuLtAk7z",
+      "youtube_id": "J4xLGK9CM74",
+      "youtube_url": "https://www.youtube.com/watch?v=J4xLGK9CM74",
       "source": "ytmusic",
       "overridden": false
     },

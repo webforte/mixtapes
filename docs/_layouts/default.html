@@ -9,10 +9,15 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="wordmark" href="{{ '/' | relative_url }}">
+      {%- comment -%}
+      The wordmark is intentionally not a link. Recipients shouldn't have a
+      one-click path back to the top-level or tenant-overview pages — those
+      list other tenants' content. Treat each mixtape page as standalone.
+      {%- endcomment -%}
+      <span class="wordmark">
         <img class="wordmark-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="">
         <span>Mixtapes</span>
-      </a>
+      </span>
     </header>
 
     <main class="site-main">

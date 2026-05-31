@@ -329,14 +329,9 @@ def render_mixtape_md(
     if yt_ids:
         watch_ids = yt_ids[:WATCH_VIDEOS_CAP]
         watch_url = "https://www.youtube.com/watch_videos?video_ids=" + ",".join(watch_ids)
-        # The watch_videos URL is a huge concatenation of video IDs — wrap it
-        # behind a label rather than printing it raw.
         lines.append(f"**[Play on YouTube]({watch_url})**")
         lines.append("")
-
-    # The Spotify playlist URL stands on its own as the share URL — rendered as
-    # a Markdown autolink so the visible text is the URL itself, copy-friendly.
-    lines.append(f"<{spotify_url}>")
+    lines.append(f"[Open on Spotify]({spotify_url})")
     lines.append("")
 
     if yt_ids and len(yt_ids) > WATCH_VIDEOS_CAP:
