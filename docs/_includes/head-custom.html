@@ -1,6 +1,14 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="googlebot" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="{{ '/assets/logo.png' | relative_url }}">
 <style>
-  /* These pages are for recipients, not collaborators — hide the theme's repo button. */
-  .page-header a.btn[href*="github.com"] { display: none !important; }
+  .page-logo {
+    display: block;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 1.25rem;
+    /* The logo's own black outline gives definition against the header gradient,
+       so no backdrop is needed. */
+  }
+  .site-footer { border-top: 0; padding-top: 0; }
 </style>
