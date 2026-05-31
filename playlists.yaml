@@ -5,8 +5,11 @@
 #   tenants:
 #     <recipient-slug>:
 #       mixtapes:
-#         - slug: <mixtape-slug>      # becomes docs/<recipient-slug>/<slug>.md
-#           title: "<display title>"
-#           spotify_url: "https://open.spotify.com/playlist/..."
+#         - spotify_url: "https://open.spotify.com/playlist/..."   # required
+#           slug: <mixtape-slug>           # optional; inferred from Spotify playlist name
+#           title: "<display title>"       # optional; inferred from Spotify playlist name
 
-tenants: {}
+tenants:
+  angela:
+    mixtapes:
+      - spotify_url: "https://open.spotify.com/playlist/0FI1TfeiurDFLuV141SBJm?si=140363f96e8a4315"
