@@ -326,13 +326,17 @@ def render_mixtape_md(
     lines.append("")
 
     yt_ids = [e.youtube_id for e in entries if e.youtube_id]
-    actions: list[str] = []
     if yt_ids:
         watch_ids = yt_ids[:WATCH_VIDEOS_CAP]
         watch_url = "https://www.youtube.com/watch_videos?video_ids=" + ",".join(watch_ids)
-        actions.append(f"**[Play on YouTube]({watch_url})**")
-    actions.append(f"[Open on Spotify]({spotify_url})")
-    lines.append(" · ".join(actions))
+        # The watch_videos URL is a huge concatenation of video IDs — wrap it
+        # behind a label rather than printing it raw.
+        lines.append(f"**[Play on YouTube]({watch_url})**")
+        lines.append("")
+
+    # The Spotify playlist URL stands on its own as the share URL — rendered as
+    # a Markdown autolink so the visible text is the URL itself, copy-friendly.
+    lines.append(f"<{spotify_url}>")
     lines.append("")
 
     if yt_ids and len(yt_ids) > WATCH_VIDEOS_CAP:
@@ -395,13 +399,24 @@ def regenerate_recipient_index(recipient: str) -> None:
 
 
 def regenerate_top_index() -> None:
-    """Refresh docs/index.md to list all recipients (tenants)."""
+    """Refresh docs/index.md to list all recipients (tenants).
+
+    A directory under docs/ counts as a tenant only if it contains at least one
+    mixtape Markdown file — that excludes `_layouts/`, `_includes/`, `assets/`,
+    and any other infrastructure folders without an explicit ignore list.
+    """
     if not DOCS_DIR.exists():
         return
-    recipients = sorted(
-        p.name for p in DOCS_DIR.iterdir()
-        if p.is_dir() and not p.name.startswith(("_", "."))
-    )
+    recipients: list[str] = []
+    for sub in DOCS_DIR.iterdir():
+        if not sub.is_dir():
+            continue
+        if sub.name.startswith(("_", ".")):
+            continue
+        mixtapes = [m for m in sub.glob("*.md") if m.name != "index.md"]
+        if mixtapes:
+            recipients.append(sub.name)
+    recipients.sort()
     lines = [
         "---",
         "title: Mixtapes",
