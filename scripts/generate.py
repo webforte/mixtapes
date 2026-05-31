@@ -93,13 +93,34 @@ def youtube_id_from_url(url: str) -> str | None:
     return match.group(1) if match else None
 
 
+class _SilentYTDLogger:
+    """Discard everything yt-dlp tries to log.
+
+    YouTube actively challenges shared cloud IPs (notably GitHub Actions
+    runners) with bot-detection; without cookies the metadata fetch will
+    routinely fail. We treat those failures as "couldn't verify" and don't
+    flood CI logs with multi-line yt-dlp error blocks.
+    """
+
+    def debug(self, _msg: str) -> None: ...
+    def info(self, _msg: str) -> None: ...
+    def warning(self, _msg: str) -> None: ...
+    def error(self, _msg: str) -> None: ...
+
+
 def fetch_youtube_metadata(video_id: str) -> dict[str, Any] | None:
-    """Fetch title, uploader, duration for a YouTube video. Returns None on failure."""
+    """Fetch title, uploader, duration for a YouTube video. Returns None on failure.
+
+    On failure the caller's verification step marks the track as unverified;
+    we deliberately stay silent here so CI logs aren't drowned in bot-challenge
+    errors.
+    """
     opts = {
         "quiet": True,
         "no_warnings": True,
         "skip_download": True,
         "extract_flat": False,
+        "logger": _SilentYTDLogger(),
     }
     try:
         with YoutubeDL(opts) as ydl:
@@ -107,8 +128,7 @@ def fetch_youtube_metadata(video_id: str) -> dict[str, Any] | None:
                 f"https://www.youtube.com/watch?v={video_id}",
                 download=False,
             )
-    except Exception as exc:  # noqa: BLE001 — yt-dlp raises a wide range of errors
-        logging.warning("yt-dlp could not fetch metadata for %s: %s", video_id, exc)
+    except Exception:  # noqa: BLE001 — yt-dlp raises a wide range of errors
         return None
 
 
