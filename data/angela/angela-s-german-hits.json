@@ -1,7 +1,7 @@
 {
   "title": "Angela's German Hits",
   "spotify_url": "https://open.spotify.com/playlist/0FI1TfeiurDFLuV141SBJm?si=140363f96e8a4315",
-  "generated_at": "2026-05-31T16:46:09+00:00",
+  "generated_at": "2026-05-31T16:47:52+00:00",
   "playlist": {
     "name": "Angela's German Hits",
     "image_url": "https://mosaic.scdn.co/640/ab67616d00001e023110ac6b32c463f398a9e051ab67616d00001e028b7b2e11970c698f38821452ab67616d00001e02a4cfc9a0cfa7a112bf21e8beab67616d00001e02d21c9fb9186da390f8269c6e",
@@ -9,17 +9,6 @@
     "description": "Pop, Rock, Indie, Rap &amp; more."
   },
   "tracks": [
-    {
-      "spotify_id": "5YVAa5A1w987AIeCn6I0UI",
-      "artist": "Wir sind Helden",
-      "title": "Guten Tag",
-      "duration_s": 215,
-      "spotify_url": "https://open.spotify.com/track/5YVAa5A1w987AIeCn6I0UI",
-      "youtube_id": "p0tSGd_I_YM",
-      "youtube_url": "https://www.youtube.com/watch?v=p0tSGd_I_YM",
-      "source": "ytmusic",
-      "overridden": false
-    },
     {
       "spotify_id": "4hYinIaRxdaoEFSQni6K6I",
       "artist": "Wir sind Helden",
@@ -32,13 +21,13 @@
       "overridden": false
     },
     {
-      "spotify_id": "0ys1g8PTTs6ADeDp2h1xpd",
-      "artist": "Deichkind",
-      "title": "Bon voyage (feat. Nina)",
-      "duration_s": 207,
-      "spotify_url": "https://open.spotify.com/track/0ys1g8PTTs6ADeDp2h1xpd",
-      "youtube_id": "6HtB-HJPhBY",
-      "youtube_url": "https://www.youtube.com/watch?v=6HtB-HJPhBY",
+      "spotify_id": "5YVAa5A1w987AIeCn6I0UI",
+      "artist": "Wir sind Helden",
+      "title": "Guten Tag",
+      "duration_s": 215,
+      "spotify_url": "https://open.spotify.com/track/5YVAa5A1w987AIeCn6I0UI",
+      "youtube_id": "p0tSGd_I_YM",
+      "youtube_url": "https://www.youtube.com/watch?v=p0tSGd_I_YM",
       "source": "ytmusic",
       "overridden": false
     },
@@ -50,6 +39,17 @@
       "spotify_url": "https://open.spotify.com/track/5QRkWkMabF6HJmQQm2HBVX",
       "youtube_id": "yA07pzRLwqI",
       "youtube_url": "https://www.youtube.com/watch?v=yA07pzRLwqI",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
+      "spotify_id": "0ys1g8PTTs6ADeDp2h1xpd",
+      "artist": "Deichkind",
+      "title": "Bon voyage (feat. Nina)",
+      "duration_s": 207,
+      "spotify_url": "https://open.spotify.com/track/0ys1g8PTTs6ADeDp2h1xpd",
+      "youtube_id": "6HtB-HJPhBY",
+      "youtube_url": "https://www.youtube.com/watch?v=6HtB-HJPhBY",
       "source": "ytmusic",
       "overridden": false
     },
@@ -98,39 +98,6 @@
       "overridden": false
     },
     {
-      "spotify_id": "3jXSoi9cDNPICj9YGYyHqB",
-      "artist": "Blümchen",
-      "title": "Kleiner Satellit",
-      "duration_s": 239,
-      "spotify_url": "https://open.spotify.com/track/3jXSoi9cDNPICj9YGYyHqB",
-      "youtube_id": "wDngtjC-Qxo",
-      "youtube_url": "https://www.youtube.com/watch?v=wDngtjC-Qxo",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
-      "spotify_id": "4vHzRFV4hTIKQbFzw9aZtI",
-      "artist": "Tic Tac Toe",
-      "title": "Mr. Wichtig",
-      "duration_s": 221,
-      "spotify_url": "https://open.spotify.com/track/4vHzRFV4hTIKQbFzw9aZtI",
-      "youtube_id": "05x_ApQpevA",
-      "youtube_url": "https://www.youtube.com/watch?v=05x_ApQpevA",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
-      "spotify_id": "6KzWkQmHEJKn7OjjY3DWOF",
-      "artist": "Tic Tac Toe",
-      "title": "Ich wär so gern so blöd wie du",
-      "duration_s": 230,
-      "spotify_url": "https://open.spotify.com/track/6KzWkQmHEJKn7OjjY3DWOF",
-      "youtube_id": "QukYHQRH3NM",
-      "youtube_url": "https://www.youtube.com/watch?v=QukYHQRH3NM",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
       "spotify_id": "1a2OetShjC5XxrNN7uUTvP",
       "artist": "Seeed",
       "title": "Aufstehn! - feat. CeeLo Green",
@@ -142,24 +109,35 @@
       "overridden": false
     },
     {
-      "spotify_id": "22CpeaLcxTA6tMe5grCUee",
-      "artist": "Rio Reiser",
-      "title": "Junimond",
-      "duration_s": 234,
-      "spotify_url": "https://open.spotify.com/track/22CpeaLcxTA6tMe5grCUee",
-      "youtube_id": "aRtojSdgtAI",
-      "youtube_url": "https://www.youtube.com/watch?v=aRtojSdgtAI",
+      "spotify_id": "4vHzRFV4hTIKQbFzw9aZtI",
+      "artist": "Tic Tac Toe",
+      "title": "Mr. Wichtig",
+      "duration_s": 221,
+      "spotify_url": "https://open.spotify.com/track/4vHzRFV4hTIKQbFzw9aZtI",
+      "youtube_id": "85LZ7Y0P5dI",
+      "youtube_url": "https://www.youtube.com/watch?v=85LZ7Y0P5dI",
       "source": "ytmusic",
       "overridden": false
     },
     {
-      "spotify_id": "4YqzixZWs5ZwjnjuhrcJQ4",
-      "artist": "Selig",
-      "title": "Wir werden uns wiedersehen",
-      "duration_s": 241,
-      "spotify_url": "https://open.spotify.com/track/4YqzixZWs5ZwjnjuhrcJQ4",
-      "youtube_id": "GNj7Oe8eq00",
-      "youtube_url": "https://www.youtube.com/watch?v=GNj7Oe8eq00",
+      "spotify_id": "6KzWkQmHEJKn7OjjY3DWOF",
+      "artist": "Tic Tac Toe",
+      "title": "Ich wär so gern so blöd wie du",
+      "duration_s": 230,
+      "spotify_url": "https://open.spotify.com/track/6KzWkQmHEJKn7OjjY3DWOF",
+      "youtube_id": "iyky5-l73zE",
+      "youtube_url": "https://www.youtube.com/watch?v=iyky5-l73zE",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
+      "spotify_id": "3jXSoi9cDNPICj9YGYyHqB",
+      "artist": "Blümchen",
+      "title": "Kleiner Satellit",
+      "duration_s": 239,
+      "spotify_url": "https://open.spotify.com/track/3jXSoi9cDNPICj9YGYyHqB",
+      "youtube_id": "wDngtjC-Qxo",
+      "youtube_url": "https://www.youtube.com/watch?v=wDngtjC-Qxo",
       "source": "ytmusic",
       "overridden": false
     },
@@ -175,6 +153,17 @@
       "overridden": false
     },
     {
+      "spotify_id": "4YqzixZWs5ZwjnjuhrcJQ4",
+      "artist": "Selig",
+      "title": "Wir werden uns wiedersehen",
+      "duration_s": 241,
+      "spotify_url": "https://open.spotify.com/track/4YqzixZWs5ZwjnjuhrcJQ4",
+      "youtube_id": "abk3Nf9mRtI",
+      "youtube_url": "https://www.youtube.com/watch?v=abk3Nf9mRtI",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
       "spotify_id": "4aFIMli7GhMfRXdR17UjlA",
       "artist": "AnnenMayKantereit",
       "title": "Tommi",
@@ -186,13 +175,13 @@
       "overridden": false
     },
     {
-      "spotify_id": "21aT5lIYHjyBIFrXNbNY5U",
-      "artist": "Echt",
-      "title": "Du trägst keine Liebe in dir",
-      "duration_s": 261,
-      "spotify_url": "https://open.spotify.com/track/21aT5lIYHjyBIFrXNbNY5U",
-      "youtube_id": "n_idbaSHy2o",
-      "youtube_url": "https://www.youtube.com/watch?v=n_idbaSHy2o",
+      "spotify_id": "22CpeaLcxTA6tMe5grCUee",
+      "artist": "Rio Reiser",
+      "title": "Junimond",
+      "duration_s": 234,
+      "spotify_url": "https://open.spotify.com/track/22CpeaLcxTA6tMe5grCUee",
+      "youtube_id": "aRtojSdgtAI",
+      "youtube_url": "https://www.youtube.com/watch?v=aRtojSdgtAI",
       "source": "ytmusic",
       "overridden": false
     },
@@ -230,6 +219,17 @@
       "overridden": false
     },
     {
+      "spotify_id": "21aT5lIYHjyBIFrXNbNY5U",
+      "artist": "Echt",
+      "title": "Du trägst keine Liebe in dir",
+      "duration_s": 261,
+      "spotify_url": "https://open.spotify.com/track/21aT5lIYHjyBIFrXNbNY5U",
+      "youtube_id": "n_idbaSHy2o",
+      "youtube_url": "https://www.youtube.com/watch?v=n_idbaSHy2o",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
       "spotify_id": "0l2VxuE9VO8oaPg9UkVRYj",
       "artist": "Die Höchste Eisenbahn",
       "title": "Vergangenheit",
@@ -246,8 +246,8 @@
       "title": "Chabos wissen wer der Babo ist",
       "duration_s": 139,
       "spotify_url": "https://open.spotify.com/track/55M8uEwBvW9VuPjPZJsGnA",
-      "youtube_id": "whSR8IMXcng",
-      "youtube_url": "https://www.youtube.com/watch?v=whSR8IMXcng",
+      "youtube_id": "cHhRi7HW0jo",
+      "youtube_url": "https://www.youtube.com/watch?v=cHhRi7HW0jo",
       "source": "ytmusic",
       "overridden": false
     },
@@ -274,24 +274,13 @@
       "overridden": false
     },
     {
-      "spotify_id": "2GsdNfuxE4tHS1Hj5hfVVf",
-      "artist": "Nina Hagen",
-      "title": "Du hast den Farbfilm vergessen",
-      "duration_s": 181,
-      "spotify_url": "https://open.spotify.com/track/2GsdNfuxE4tHS1Hj5hfVVf",
-      "youtube_id": "R5LtP_8qKfg",
-      "youtube_url": "https://www.youtube.com/watch?v=R5LtP_8qKfg",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
       "spotify_id": "2AXOg2WMjJt8Os7M3b589T",
       "artist": "Haftbefehl",
       "title": "Ich rolle mit meim Besten - Babos Remix",
       "duration_s": 189,
       "spotify_url": "https://open.spotify.com/track/2AXOg2WMjJt8Os7M3b589T",
-      "youtube_id": "_oj1X7meQ-I",
-      "youtube_url": "https://www.youtube.com/watch?v=_oj1X7meQ-I",
+      "youtube_id": "6KY7SSgF9zA",
+      "youtube_url": "https://www.youtube.com/watch?v=6KY7SSgF9zA",
       "source": "ytmusic",
       "overridden": false
     },
@@ -303,6 +292,17 @@
       "spotify_url": "https://open.spotify.com/track/3jxxYgf0lK155eeuSO5sH1",
       "youtube_id": "3seOou4qFyU",
       "youtube_url": "https://www.youtube.com/watch?v=3seOou4qFyU",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
+      "spotify_id": "2GsdNfuxE4tHS1Hj5hfVVf",
+      "artist": "Nina Hagen",
+      "title": "Du hast den Farbfilm vergessen",
+      "duration_s": 181,
+      "spotify_url": "https://open.spotify.com/track/2GsdNfuxE4tHS1Hj5hfVVf",
+      "youtube_id": "R5LtP_8qKfg",
+      "youtube_url": "https://www.youtube.com/watch?v=R5LtP_8qKfg",
       "source": "ytmusic",
       "overridden": false
     },
