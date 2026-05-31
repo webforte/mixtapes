@@ -41,6 +41,7 @@ import yaml
 from rapidfuzz import fuzz
 from spotdl import Spotdl
 from spotdl.types.song import Song
+from spotdl.utils.spotify import SpotifyClient
 from yt_dlp import YoutubeDL
 
 
@@ -189,10 +190,33 @@ def load_overrides(recipient: str, slug: str) -> dict[str, str]:
     return out
 
 
-def process_playlist(
-    spotify_url: str, recipient: str, slug: str
-) -> list[TrackEntry]:
-    """Resolve a Spotify playlist into verified TrackEntry rows."""
+def fetch_playlist_metadata(spotify_url: str) -> dict[str, Any]:
+    """Fetch display metadata for a playlist (name, image, owner) via spotDL's SpotifyClient.
+
+    Returns an empty dict on any failure — callers should treat all keys as optional.
+    Requires Spotdl() to have been constructed (it initialises SpotifyClient as a side effect).
+    """
+    match = re.search(r"playlist/([A-Za-z0-9]+)", spotify_url)
+    if not match:
+        return {}
+    playlist_id = match.group(1)
+    try:
+        data = SpotifyClient().playlist(playlist_id)
+    except Exception as exc:  # noqa: BLE001
+        logging.warning("Could not fetch playlist metadata for %s: %s", playlist_id, exc)
+        return {}
+    images = data.get("images") or []
+    image_url = images[0]["url"] if images and images[0].get("url") else ""
+    return {
+        "name": (data.get("name") or "").strip(),
+        "image_url": image_url,
+        "owner": ((data.get("owner") or {}).get("display_name") or "").strip(),
+        "description": (data.get("description") or "").strip(),
+    }
+
+
+def fetch_playlist(spotify_url: str) -> tuple[Spotdl, list[Song], dict[str, Any]]:
+    """Construct Spotdl, search the playlist, and fetch its display metadata."""
     spotdl = Spotdl(
         client_id=SPOTDL_CLIENT_ID,
         client_secret=SPOTDL_CLIENT_SECRET,
@@ -206,6 +230,17 @@ def process_playlist(
         raise SystemExit(f"No tracks found at {spotify_url}")
     print(f"  found {len(songs)} tracks", flush=True)
 
+    metadata = fetch_playlist_metadata(spotify_url)
+    if metadata.get("name"):
+        print(f"  playlist: {metadata['name']!r}", flush=True)
+
+    return spotdl, songs, metadata
+
+
+def match_and_verify_songs(
+    spotdl: Spotdl, songs: list[Song], recipient: str, slug: str
+) -> list[TrackEntry]:
+    """Match each Song to a YouTube video, verify, return parallel TrackEntry rows."""
     overrides = load_overrides(recipient, slug)
     if overrides:
         print(f"  applying {len(overrides)} override(s) from overrides/{recipient}/{slug}.yaml", flush=True)
@@ -293,14 +328,16 @@ def write_manifest(
     slug: str,
     spotify_url: str,
     title: str,
+    playlist_metadata: dict[str, Any] | None = None,
 ) -> Path:
     """Persist the source-of-truth JSON used to regenerate the MD page."""
     path = DATA_DIR / recipient / f"{slug}.json"
     path.parent.mkdir(parents=True, exist_ok=True)
-    payload = {
+    payload: dict[str, Any] = {
         "title": title,
         "spotify_url": spotify_url,
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "playlist": playlist_metadata or {},
         "tracks": [asdict(e) for e in entries],
     }
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n")
@@ -319,19 +356,30 @@ def render_mixtape_md(
     slug: str,
     title: str,
     spotify_url: str,
+    playlist_metadata: dict[str, Any] | None = None,
 ) -> str:
     """Render the per-mixtape Markdown page (tracklist + watch_videos URL + review section)."""
+    meta = playlist_metadata or {}
+    image_url = meta.get("image_url") or ""
+
     lines: list[str] = [
         "---",
         f"title: {title}",
         f"recipient: {recipient}",
         "---",
         "",
-        f"# {title}",
-        "",
-        f"_Curated for **{recipient}** · generated {datetime.now(timezone.utc).strftime('%Y-%m-%d')}._",
-        "",
     ]
+    if image_url:
+        # HTML <img> so we can control width without depending on Markdown image attributes.
+        safe_alt = title.replace('"', "&quot;")
+        lines.append(f'<img src="{image_url}" alt="{safe_alt}" width="320" />')
+        lines.append("")
+    lines.append(f"# {title}")
+    lines.append("")
+    lines.append(
+        f"_Curated for **{recipient}** · generated {datetime.now(timezone.utc).strftime('%Y-%m-%d')}._"
+    )
+    lines.append("")
 
     yt_ids = [e.youtube_id for e in entries if e.youtube_id]
     if yt_ids:
@@ -444,22 +492,42 @@ def regenerate_top_index() -> None:
     (DOCS_DIR / "index.md").write_text("\n".join(lines))
 
 
-def generate_one(spotify_url: str, recipient_raw: str, slug_raw: str, title: str) -> tuple[int, int]:
-    """Generate manifest + MD for a single mixtape. Returns (verified_count, needs_review_count)."""
+def generate_one(
+    spotify_url: str,
+    recipient_raw: str,
+    slug_raw: str | None = None,
+    title: str | None = None,
+) -> tuple[str, int, int]:
+    """Generate manifest + MD for a single mixtape.
+
+    `slug_raw` and `title` are optional — when omitted, both are inferred from
+    the Spotify playlist's own `name`. Returns (resolved_recipient, verified_count, needs_review_count).
+    """
     recipient = slugify(recipient_raw)
-    slug = slugify(slug_raw)
-
     print()
-    print(f"=== {recipient}/{slug} — {title} ===")
+    print(f"=== {recipient}/{slug_raw or '(infer)'} ===")
 
-    entries = process_playlist(spotify_url, recipient, slug)
+    spotdl, songs, playlist_meta = fetch_playlist(spotify_url)
+
+    inferred_name = playlist_meta.get("name") or ""
+    resolved_title = title or inferred_name or "Mixtape"
+    resolved_slug = slugify(slug_raw or inferred_name or "mixtape")
+    if not resolved_slug:
+        resolved_slug = "mixtape"
+    print(f"  resolved: slug={resolved_slug!r} title={resolved_title!r}")
+
+    entries = match_and_verify_songs(spotdl, songs, recipient, resolved_slug)
 
     verified_count = sum(1 for e in entries if e.verified)
     needs_review = len(entries) - verified_count
 
-    manifest_path = write_manifest(entries, recipient, slug, spotify_url, title)
-    md = render_mixtape_md(entries, recipient, slug, title, spotify_url)
-    md_path = DOCS_DIR / recipient / f"{slug}.md"
+    manifest_path = write_manifest(
+        entries, recipient, resolved_slug, spotify_url, resolved_title, playlist_meta,
+    )
+    md = render_mixtape_md(
+        entries, recipient, resolved_slug, resolved_title, spotify_url, playlist_meta,
+    )
+    md_path = DOCS_DIR / recipient / f"{resolved_slug}.md"
     md_path.parent.mkdir(parents=True, exist_ok=True)
     md_path.write_text(md)
 
@@ -467,13 +535,13 @@ def generate_one(spotify_url: str, recipient_raw: str, slug_raw: str, title: str
     print(f"  → {manifest_path.relative_to(REPO_ROOT)}")
     print(f"  → {md_path.relative_to(REPO_ROOT)}")
 
-    return verified_count, needs_review
+    return recipient, verified_count, needs_review
 
 
 def generate_from_config(config_path: Path) -> int:
     """Regenerate every mixtape declared in playlists.yaml. Returns total ⚠ count across runs."""
     config = yaml.safe_load(config_path.read_text()) or {}
-    tenants = config.get("tenants", {})
+    tenants = config.get("tenants", {}) or {}
     if not tenants:
         raise SystemExit(f"{config_path} declares no tenants.")
 
@@ -483,15 +551,17 @@ def generate_from_config(config_path: Path) -> int:
     for recipient_raw, tenant in tenants.items():
         mixtapes = (tenant or {}).get("mixtapes", []) or []
         for entry in mixtapes:
-            slug_raw = entry["slug"]
-            title = entry["title"]
             spotify_url = entry["spotify_url"]
+            slug_raw = entry.get("slug")
+            title = entry.get("title")
             try:
-                _verified, needs_review = generate_one(spotify_url, recipient_raw, slug_raw, title)
+                resolved_recipient, _verified, needs_review = generate_one(
+                    spotify_url, recipient_raw, slug_raw, title,
+                )
                 total_review += needs_review
-                touched_recipients.add(slugify(recipient_raw))
+                touched_recipients.add(resolved_recipient)
             except Exception as exc:  # noqa: BLE001
-                print(f"  ✗ FAILED {recipient_raw}/{slug_raw}: {exc}", flush=True)
+                print(f"  ✗ FAILED {recipient_raw}/{slug_raw or '(infer)'}: {exc}", flush=True)
 
     for recipient in touched_recipients:
         regenerate_recipient_index(recipient)
@@ -512,8 +582,8 @@ def main() -> None:
     )
     parser.add_argument("--url", help="Public Spotify playlist URL (single-mixtape mode)")
     parser.add_argument("--recipient", help="Recipient slug (single-mixtape mode)")
-    parser.add_argument("--slug", help="Mixtape slug (single-mixtape mode)")
-    parser.add_argument("--title", help="Mixtape display title (single-mixtape mode)")
+    parser.add_argument("--slug", help="Mixtape slug — optional; inferred from Spotify playlist name when omitted")
+    parser.add_argument("--title", help="Mixtape display title — optional; inferred from Spotify playlist name when omitted")
     args = parser.parse_args()
 
     if args.config:
@@ -521,11 +591,13 @@ def main() -> None:
             parser.error("--config cannot be combined with --url / --recipient / --slug / --title")
         total_review = generate_from_config(Path(args.config))
     else:
-        missing = [name for name in ("url", "recipient", "slug", "title") if not getattr(args, name)]
+        missing = [name for name in ("url", "recipient") if not getattr(args, name)]
         if missing:
-            parser.error(f"Either --config or all of --url/--recipient/--slug/--title. Missing: {missing}")
-        _verified, total_review = generate_one(args.url, args.recipient, args.slug, args.title)
-        regenerate_recipient_index(slugify(args.recipient))
+            parser.error(f"Either --config or both of --url/--recipient. Missing: {missing}")
+        resolved_recipient, _verified, total_review = generate_one(
+            args.url, args.recipient, args.slug, args.title,
+        )
+        regenerate_recipient_index(resolved_recipient)
         regenerate_top_index()
 
     if total_review:
