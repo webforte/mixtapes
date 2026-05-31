@@ -1,7 +1,7 @@
 {
   "title": "Angela's German Hits",
   "spotify_url": "https://open.spotify.com/playlist/0FI1TfeiurDFLuV141SBJm?si=140363f96e8a4315",
-  "generated_at": "2026-05-31T15:41:41+00:00",
+  "generated_at": "2026-05-31T15:43:43+00:00",
   "playlist": {
     "name": "Angela's German Hits",
     "image_url": "https://mosaic.scdn.co/640/ab67616d00001e023110ac6b32c463f398a9e051ab67616d00001e028b7b2e11970c698f38821452ab67616d00001e02a4cfc9a0cfa7a112bf21e8beab67616d00001e02d21c9fb9186da390f8269c6e",
@@ -17,17 +17,6 @@
       "spotify_url": "https://open.spotify.com/track/0ys1g8PTTs6ADeDp2h1xpd",
       "youtube_id": "6HtB-HJPhBY",
       "youtube_url": "https://www.youtube.com/watch?v=6HtB-HJPhBY",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
-      "spotify_id": "5QRkWkMabF6HJmQQm2HBVX",
-      "artist": "Sportfreunde Stiller",
-      "title": "Ein Kompliment",
-      "duration_s": 198,
-      "spotify_url": "https://open.spotify.com/track/5QRkWkMabF6HJmQQm2HBVX",
-      "youtube_id": "yA07pzRLwqI",
-      "youtube_url": "https://www.youtube.com/watch?v=yA07pzRLwqI",
       "source": "ytmusic",
       "overridden": false
     },
@@ -54,24 +43,13 @@
       "overridden": false
     },
     {
-      "spotify_id": "6b2vkaiDawOcupyDxNNCba",
-      "artist": "Seeed",
-      "title": "Dancehall Caballeros",
-      "duration_s": 192,
-      "spotify_url": "https://open.spotify.com/track/6b2vkaiDawOcupyDxNNCba",
-      "youtube_id": "_kSRrM9BKxg",
-      "youtube_url": "https://www.youtube.com/watch?v=_kSRrM9BKxg",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
-      "spotify_id": "01y4v0GVDAFwj9hjxTMshg",
-      "artist": "Jan Delay",
-      "title": "Klar",
-      "duration_s": 295,
-      "spotify_url": "https://open.spotify.com/track/01y4v0GVDAFwj9hjxTMshg",
-      "youtube_id": "b882EyGggNo",
-      "youtube_url": "https://www.youtube.com/watch?v=b882EyGggNo",
+      "spotify_id": "5QRkWkMabF6HJmQQm2HBVX",
+      "artist": "Sportfreunde Stiller",
+      "title": "Ein Kompliment",
+      "duration_s": 198,
+      "spotify_url": "https://open.spotify.com/track/5QRkWkMabF6HJmQQm2HBVX",
+      "youtube_id": "yA07pzRLwqI",
+      "youtube_url": "https://www.youtube.com/watch?v=yA07pzRLwqI",
       "source": "ytmusic",
       "overridden": false
     },
@@ -87,6 +65,17 @@
       "overridden": false
     },
     {
+      "spotify_id": "6b2vkaiDawOcupyDxNNCba",
+      "artist": "Seeed",
+      "title": "Dancehall Caballeros",
+      "duration_s": 192,
+      "spotify_url": "https://open.spotify.com/track/6b2vkaiDawOcupyDxNNCba",
+      "youtube_id": "_kSRrM9BKxg",
+      "youtube_url": "https://www.youtube.com/watch?v=_kSRrM9BKxg",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
       "spotify_id": "31sD77U64ym70wYEMpnSrQ",
       "artist": "Deichkind",
       "title": "Remmidemmi (Yippie Yippie Yeah)",
@@ -94,6 +83,28 @@
       "spotify_url": "https://open.spotify.com/track/31sD77U64ym70wYEMpnSrQ",
       "youtube_id": "45fgIwR3LqY",
       "youtube_url": "https://www.youtube.com/watch?v=45fgIwR3LqY",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
+      "spotify_id": "01y4v0GVDAFwj9hjxTMshg",
+      "artist": "Jan Delay",
+      "title": "Klar",
+      "duration_s": 295,
+      "spotify_url": "https://open.spotify.com/track/01y4v0GVDAFwj9hjxTMshg",
+      "youtube_id": "b882EyGggNo",
+      "youtube_url": "https://www.youtube.com/watch?v=b882EyGggNo",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
+      "spotify_id": "3jXSoi9cDNPICj9YGYyHqB",
+      "artist": "Blümchen",
+      "title": "Kleiner Satellit",
+      "duration_s": 239,
+      "spotify_url": "https://open.spotify.com/track/3jXSoi9cDNPICj9YGYyHqB",
+      "youtube_id": "7noKNcABTQM",
+      "youtube_url": "https://www.youtube.com/watch?v=7noKNcABTQM",
       "source": "ytmusic",
       "overridden": false
     },
@@ -114,8 +125,8 @@
       "title": "Ich wär so gern so blöd wie du",
       "duration_s": 230,
       "spotify_url": "https://open.spotify.com/track/6KzWkQmHEJKn7OjjY3DWOF",
-      "youtube_id": "QukYHQRH3NM",
-      "youtube_url": "https://www.youtube.com/watch?v=QukYHQRH3NM",
+      "youtube_id": "iyky5-l73zE",
+      "youtube_url": "https://www.youtube.com/watch?v=iyky5-l73zE",
       "source": "ytmusic",
       "overridden": false
     },
@@ -125,30 +136,8 @@
       "title": "Mr. Wichtig",
       "duration_s": 221,
       "spotify_url": "https://open.spotify.com/track/4vHzRFV4hTIKQbFzw9aZtI",
-      "youtube_id": "05x_ApQpevA",
-      "youtube_url": "https://www.youtube.com/watch?v=05x_ApQpevA",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
-      "spotify_id": "3jXSoi9cDNPICj9YGYyHqB",
-      "artist": "Blümchen",
-      "title": "Kleiner Satellit",
-      "duration_s": 239,
-      "spotify_url": "https://open.spotify.com/track/3jXSoi9cDNPICj9YGYyHqB",
-      "youtube_id": "wDngtjC-Qxo",
-      "youtube_url": "https://www.youtube.com/watch?v=wDngtjC-Qxo",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
-      "spotify_id": "22CpeaLcxTA6tMe5grCUee",
-      "artist": "Rio Reiser",
-      "title": "Junimond",
-      "duration_s": 234,
-      "spotify_url": "https://open.spotify.com/track/22CpeaLcxTA6tMe5grCUee",
-      "youtube_id": "aRtojSdgtAI",
-      "youtube_url": "https://www.youtube.com/watch?v=aRtojSdgtAI",
+      "youtube_id": "85LZ7Y0P5dI",
+      "youtube_url": "https://www.youtube.com/watch?v=85LZ7Y0P5dI",
       "source": "ytmusic",
       "overridden": false
     },
@@ -164,13 +153,13 @@
       "overridden": false
     },
     {
-      "spotify_id": "4YqzixZWs5ZwjnjuhrcJQ4",
-      "artist": "Selig",
-      "title": "Wir werden uns wiedersehen",
-      "duration_s": 241,
-      "spotify_url": "https://open.spotify.com/track/4YqzixZWs5ZwjnjuhrcJQ4",
-      "youtube_id": "GNj7Oe8eq00",
-      "youtube_url": "https://www.youtube.com/watch?v=GNj7Oe8eq00",
+      "spotify_id": "22CpeaLcxTA6tMe5grCUee",
+      "artist": "Rio Reiser",
+      "title": "Junimond",
+      "duration_s": 234,
+      "spotify_url": "https://open.spotify.com/track/22CpeaLcxTA6tMe5grCUee",
+      "youtube_id": "aRtojSdgtAI",
+      "youtube_url": "https://www.youtube.com/watch?v=aRtojSdgtAI",
       "source": "ytmusic",
       "overridden": false
     },
@@ -186,13 +175,13 @@
       "overridden": false
     },
     {
-      "spotify_id": "0UIJh1j0OqO7se1J3JeX1X",
-      "artist": "Ton Steine Scherben",
-      "title": "Halt dich an deiner Liebe fest",
-      "duration_s": 419,
-      "spotify_url": "https://open.spotify.com/track/0UIJh1j0OqO7se1J3JeX1X",
-      "youtube_id": "N7VXrWhTf20",
-      "youtube_url": "https://www.youtube.com/watch?v=N7VXrWhTf20",
+      "spotify_id": "4YqzixZWs5ZwjnjuhrcJQ4",
+      "artist": "Selig",
+      "title": "Wir werden uns wiedersehen",
+      "duration_s": 241,
+      "spotify_url": "https://open.spotify.com/track/4YqzixZWs5ZwjnjuhrcJQ4",
+      "youtube_id": "abk3Nf9mRtI",
+      "youtube_url": "https://www.youtube.com/watch?v=abk3Nf9mRtI",
       "source": "ytmusic",
       "overridden": false
     },
@@ -208,17 +197,6 @@
       "overridden": false
     },
     {
-      "spotify_id": "21aT5lIYHjyBIFrXNbNY5U",
-      "artist": "Echt",
-      "title": "Du trägst keine Liebe in dir",
-      "duration_s": 261,
-      "spotify_url": "https://open.spotify.com/track/21aT5lIYHjyBIFrXNbNY5U",
-      "youtube_id": "n_idbaSHy2o",
-      "youtube_url": "https://www.youtube.com/watch?v=n_idbaSHy2o",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
       "spotify_id": "5FP7gxNVjs6vTVcWoYYI9B",
       "artist": "AnnenMayKantereit",
       "title": "Hurra die Welt geht unter - Live",
@@ -230,35 +208,24 @@
       "overridden": false
     },
     {
-      "spotify_id": "55M8uEwBvW9VuPjPZJsGnA",
-      "artist": "Haftbefehl",
-      "title": "Chabos wissen wer der Babo ist",
-      "duration_s": 139,
-      "spotify_url": "https://open.spotify.com/track/55M8uEwBvW9VuPjPZJsGnA",
-      "youtube_id": "whSR8IMXcng",
-      "youtube_url": "https://www.youtube.com/watch?v=whSR8IMXcng",
+      "spotify_id": "0UIJh1j0OqO7se1J3JeX1X",
+      "artist": "Ton Steine Scherben",
+      "title": "Halt dich an deiner Liebe fest",
+      "duration_s": 419,
+      "spotify_url": "https://open.spotify.com/track/0UIJh1j0OqO7se1J3JeX1X",
+      "youtube_id": "N7VXrWhTf20",
+      "youtube_url": "https://www.youtube.com/watch?v=N7VXrWhTf20",
       "source": "ytmusic",
       "overridden": false
     },
     {
-      "spotify_id": "0l2VxuE9VO8oaPg9UkVRYj",
-      "artist": "Die Höchste Eisenbahn",
-      "title": "Vergangenheit",
-      "duration_s": 289,
-      "spotify_url": "https://open.spotify.com/track/0l2VxuE9VO8oaPg9UkVRYj",
-      "youtube_id": "Xsx8BMW5Ih8",
-      "youtube_url": "https://www.youtube.com/watch?v=Xsx8BMW5Ih8",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
-      "spotify_id": "13FlxJxlFrtgphJb94sFAM",
-      "artist": "Von Wegen Lisbeth",
-      "title": "Chérie",
-      "duration_s": 178,
-      "spotify_url": "https://open.spotify.com/track/13FlxJxlFrtgphJb94sFAM",
-      "youtube_id": "c4HEPw10mio",
-      "youtube_url": "https://www.youtube.com/watch?v=c4HEPw10mio",
+      "spotify_id": "21aT5lIYHjyBIFrXNbNY5U",
+      "artist": "Echt",
+      "title": "Du trägst keine Liebe in dir",
+      "duration_s": 261,
+      "spotify_url": "https://open.spotify.com/track/21aT5lIYHjyBIFrXNbNY5U",
+      "youtube_id": "n_idbaSHy2o",
+      "youtube_url": "https://www.youtube.com/watch?v=n_idbaSHy2o",
       "source": "ytmusic",
       "overridden": false
     },
@@ -274,13 +241,57 @@
       "overridden": false
     },
     {
+      "spotify_id": "55M8uEwBvW9VuPjPZJsGnA",
+      "artist": "Haftbefehl",
+      "title": "Chabos wissen wer der Babo ist",
+      "duration_s": 139,
+      "spotify_url": "https://open.spotify.com/track/55M8uEwBvW9VuPjPZJsGnA",
+      "youtube_id": "cHhRi7HW0jo",
+      "youtube_url": "https://www.youtube.com/watch?v=cHhRi7HW0jo",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
+      "spotify_id": "13FlxJxlFrtgphJb94sFAM",
+      "artist": "Von Wegen Lisbeth",
+      "title": "Chérie",
+      "duration_s": 178,
+      "spotify_url": "https://open.spotify.com/track/13FlxJxlFrtgphJb94sFAM",
+      "youtube_id": "c4HEPw10mio",
+      "youtube_url": "https://www.youtube.com/watch?v=c4HEPw10mio",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
+      "spotify_id": "0l2VxuE9VO8oaPg9UkVRYj",
+      "artist": "Die Höchste Eisenbahn",
+      "title": "Vergangenheit",
+      "duration_s": 289,
+      "spotify_url": "https://open.spotify.com/track/0l2VxuE9VO8oaPg9UkVRYj",
+      "youtube_id": "Xsx8BMW5Ih8",
+      "youtube_url": "https://www.youtube.com/watch?v=Xsx8BMW5Ih8",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
       "spotify_id": "2AXOg2WMjJt8Os7M3b589T",
       "artist": "Haftbefehl",
       "title": "Ich rolle mit meim Besten - Babos Remix",
       "duration_s": 189,
       "spotify_url": "https://open.spotify.com/track/2AXOg2WMjJt8Os7M3b589T",
-      "youtube_id": "_oj1X7meQ-I",
-      "youtube_url": "https://www.youtube.com/watch?v=_oj1X7meQ-I",
+      "youtube_id": "6KY7SSgF9zA",
+      "youtube_url": "https://www.youtube.com/watch?v=6KY7SSgF9zA",
+      "source": "ytmusic",
+      "overridden": false
+    },
+    {
+      "spotify_id": "2GsdNfuxE4tHS1Hj5hfVVf",
+      "artist": "Nina Hagen",
+      "title": "Du hast den Farbfilm vergessen",
+      "duration_s": 181,
+      "spotify_url": "https://open.spotify.com/track/2GsdNfuxE4tHS1Hj5hfVVf",
+      "youtube_id": "R5LtP_8qKfg",
+      "youtube_url": "https://www.youtube.com/watch?v=R5LtP_8qKfg",
       "source": "ytmusic",
       "overridden": false
     },
@@ -303,17 +314,6 @@
       "spotify_url": "https://open.spotify.com/track/0pXN3MXGemL7dmLuLtAk7z",
       "youtube_id": "J4xLGK9CM74",
       "youtube_url": "https://www.youtube.com/watch?v=J4xLGK9CM74",
-      "source": "ytmusic",
-      "overridden": false
-    },
-    {
-      "spotify_id": "2GsdNfuxE4tHS1Hj5hfVVf",
-      "artist": "Nina Hagen",
-      "title": "Du hast den Farbfilm vergessen",
-      "duration_s": 181,
-      "spotify_url": "https://open.spotify.com/track/2GsdNfuxE4tHS1Hj5hfVVf",
-      "youtube_id": "R5LtP_8qKfg",
-      "youtube_url": "https://www.youtube.com/watch?v=R5LtP_8qKfg",
       "source": "ytmusic",
       "overridden": false
     },
