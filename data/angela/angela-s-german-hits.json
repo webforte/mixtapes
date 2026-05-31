@@ -1,7 +1,7 @@
 {
   "title": "Angela's German Hits",
   "spotify_url": "https://open.spotify.com/playlist/0FI1TfeiurDFLuV141SBJm?si=140363f96e8a4315",
-  "generated_at": "2026-05-31T15:27:51+00:00",
+  "generated_at": "2026-05-31T15:34:57+00:00",
   "playlist": {
     "name": "Angela's German Hits",
     "image_url": "https://mosaic.scdn.co/640/ab67616d00001e023110ac6b32c463f398a9e051ab67616d00001e028b7b2e11970c698f38821452ab67616d00001e02a4cfc9a0cfa7a112bf21e8beab67616d00001e02d21c9fb9186da390f8269c6e",
@@ -10,6 +10,17 @@
   },
   "tracks": [
     {
+      "spotify_id": "0ys1g8PTTs6ADeDp2h1xpd",
+      "artist": "Deichkind",
+      "title": "Bon voyage (feat. Nina)",
+      "duration_s": 207,
+      "spotify_url": "https://open.spotify.com/track/0ys1g8PTTs6ADeDp2h1xpd",
+      "youtube_id": null,
+      "youtube_url": null,
+      "source": null,
+      "overridden": false
+    },
+    {
       "spotify_id": "5YVAa5A1w987AIeCn6I0UI",
       "artist": "Wir sind Helden",
       "title": "Guten Tag",
@@ -17,6 +28,17 @@
       "spotify_url": "https://open.spotify.com/track/5YVAa5A1w987AIeCn6I0UI",
       "youtube_id": "p0tSGd_I_YM",
       "youtube_url": "https://www.youtube.com/watch?v=p0tSGd_I_YM",
+      "source": "spotdl",
+      "overridden": false
+    },
+    {
+      "spotify_id": "5QRkWkMabF6HJmQQm2HBVX",
+      "artist": "Sportfreunde Stiller",
+      "title": "Ein Kompliment",
+      "duration_s": 198,
+      "spotify_url": "https://open.spotify.com/track/5QRkWkMabF6HJmQQm2HBVX",
+      "youtube_id": "yA07pzRLwqI",
+      "youtube_url": "https://www.youtube.com/watch?v=yA07pzRLwqI",
       "source": "spotdl",
       "overridden": false
     },
@@ -32,57 +54,13 @@
       "overridden": false
     },
     {
-      "spotify_id": "0ys1g8PTTs6ADeDp2h1xpd",
-      "artist": "Deichkind",
-      "title": "Bon voyage (feat. Nina)",
-      "duration_s": 207,
-      "spotify_url": "https://open.spotify.com/track/0ys1g8PTTs6ADeDp2h1xpd",
-      "youtube_id": null,
-      "youtube_url": null,
-      "source": null,
-      "overridden": false
-    },
-    {
-      "spotify_id": "5QRkWkMabF6HJmQQm2HBVX",
-      "artist": "Sportfreunde Stiller",
-      "title": "Ein Kompliment",
-      "duration_s": 198,
-      "spotify_url": "https://open.spotify.com/track/5QRkWkMabF6HJmQQm2HBVX",
-      "youtube_id": "yA07pzRLwqI",
-      "youtube_url": "https://www.youtube.com/watch?v=yA07pzRLwqI",
-      "source": "spotdl",
-      "overridden": false
-    },
-    {
       "spotify_id": "04sIbgH6Vdo2V21QsUPaRJ",
       "artist": "Jan Delay",
       "title": "Irgendwie, Irgendwo, Irgendwann",
       "duration_s": 330,
       "spotify_url": "https://open.spotify.com/track/04sIbgH6Vdo2V21QsUPaRJ",
-      "youtube_id": null,
-      "youtube_url": null,
-      "source": null,
-      "overridden": false
-    },
-    {
-      "spotify_id": "01y4v0GVDAFwj9hjxTMshg",
-      "artist": "Jan Delay",
-      "title": "Klar",
-      "duration_s": 295,
-      "spotify_url": "https://open.spotify.com/track/01y4v0GVDAFwj9hjxTMshg",
-      "youtube_id": "b882EyGggNo",
-      "youtube_url": "https://www.youtube.com/watch?v=b882EyGggNo",
-      "source": "spotdl",
-      "overridden": false
-    },
-    {
-      "spotify_id": "6b2vkaiDawOcupyDxNNCba",
-      "artist": "Seeed",
-      "title": "Dancehall Caballeros",
-      "duration_s": 192,
-      "spotify_url": "https://open.spotify.com/track/6b2vkaiDawOcupyDxNNCba",
-      "youtube_id": "_kSRrM9BKxg",
-      "youtube_url": "https://www.youtube.com/watch?v=_kSRrM9BKxg",
+      "youtube_id": "YF6jfE-CwnI",
+      "youtube_url": "https://www.youtube.com/watch?v=YF6jfE-CwnI",
       "source": "spotdl",
       "overridden": false
     },
@@ -98,14 +76,36 @@
       "overridden": false
     },
     {
+      "spotify_id": "6b2vkaiDawOcupyDxNNCba",
+      "artist": "Seeed",
+      "title": "Dancehall Caballeros",
+      "duration_s": 192,
+      "spotify_url": "https://open.spotify.com/track/6b2vkaiDawOcupyDxNNCba",
+      "youtube_id": "_kSRrM9BKxg",
+      "youtube_url": "https://www.youtube.com/watch?v=_kSRrM9BKxg",
+      "source": "spotdl",
+      "overridden": false
+    },
+    {
+      "spotify_id": "01y4v0GVDAFwj9hjxTMshg",
+      "artist": "Jan Delay",
+      "title": "Klar",
+      "duration_s": 295,
+      "spotify_url": "https://open.spotify.com/track/01y4v0GVDAFwj9hjxTMshg",
+      "youtube_id": "b882EyGggNo",
+      "youtube_url": "https://www.youtube.com/watch?v=b882EyGggNo",
+      "source": "spotdl",
+      "overridden": false
+    },
+    {
       "spotify_id": "6KzWkQmHEJKn7OjjY3DWOF",
       "artist": "Tic Tac Toe",
       "title": "Ich wär so gern so blöd wie du",
       "duration_s": 230,
       "spotify_url": "https://open.spotify.com/track/6KzWkQmHEJKn7OjjY3DWOF",
-      "youtube_id": "QukYHQRH3NM",
-      "youtube_url": "https://www.youtube.com/watch?v=QukYHQRH3NM",
-      "source": "spotdl",
+      "youtube_id": null,
+      "youtube_url": null,
+      "source": null,
       "overridden": false
     },
     {
@@ -114,20 +114,9 @@
       "title": "Kleiner Satellit",
       "duration_s": 239,
       "spotify_url": "https://open.spotify.com/track/3jXSoi9cDNPICj9YGYyHqB",
-      "youtube_id": "kMUuqB4xc6s",
-      "youtube_url": "https://www.youtube.com/watch?v=kMUuqB4xc6s",
-      "source": "spotdl",
-      "overridden": false
-    },
-    {
-      "spotify_id": "4vHzRFV4hTIKQbFzw9aZtI",
-      "artist": "Tic Tac Toe",
-      "title": "Mr. Wichtig",
-      "duration_s": 221,
-      "spotify_url": "https://open.spotify.com/track/4vHzRFV4hTIKQbFzw9aZtI",
-      "youtube_id": "05x_ApQpevA",
-      "youtube_url": "https://www.youtube.com/watch?v=05x_ApQpevA",
-      "source": "spotdl",
+      "youtube_id": null,
+      "youtube_url": null,
+      "source": null,
       "overridden": false
     },
     {
@@ -136,8 +125,41 @@
       "title": "Aufstehn! - feat. CeeLo Green",
       "duration_s": 230,
       "spotify_url": "https://open.spotify.com/track/1a2OetShjC5XxrNN7uUTvP",
-      "youtube_id": "g6JYzOjglBs",
-      "youtube_url": "https://www.youtube.com/watch?v=g6JYzOjglBs",
+      "youtube_id": null,
+      "youtube_url": null,
+      "source": null,
+      "overridden": false
+    },
+    {
+      "spotify_id": "4vHzRFV4hTIKQbFzw9aZtI",
+      "artist": "Tic Tac Toe",
+      "title": "Mr. Wichtig",
+      "duration_s": 221,
+      "spotify_url": "https://open.spotify.com/track/4vHzRFV4hTIKQbFzw9aZtI",
+      "youtube_id": null,
+      "youtube_url": null,
+      "source": null,
+      "overridden": false
+    },
+    {
+      "spotify_id": "4YqzixZWs5ZwjnjuhrcJQ4",
+      "artist": "Selig",
+      "title": "Wir werden uns wiedersehen",
+      "duration_s": 241,
+      "spotify_url": "https://open.spotify.com/track/4YqzixZWs5ZwjnjuhrcJQ4",
+      "youtube_id": null,
+      "youtube_url": null,
+      "source": null,
+      "overridden": false
+    },
+    {
+      "spotify_id": "4aFIMli7GhMfRXdR17UjlA",
+      "artist": "AnnenMayKantereit",
+      "title": "Tommi",
+      "duration_s": 279,
+      "spotify_url": "https://open.spotify.com/track/4aFIMli7GhMfRXdR17UjlA",
+      "youtube_id": "26TRse93pAY",
+      "youtube_url": "https://www.youtube.com/watch?v=26TRse93pAY",
       "source": "spotdl",
       "overridden": false
     },
@@ -153,28 +175,6 @@
       "overridden": false
     },
     {
-      "spotify_id": "4YqzixZWs5ZwjnjuhrcJQ4",
-      "artist": "Selig",
-      "title": "Wir werden uns wiedersehen",
-      "duration_s": 241,
-      "spotify_url": "https://open.spotify.com/track/4YqzixZWs5ZwjnjuhrcJQ4",
-      "youtube_id": "GNj7Oe8eq00",
-      "youtube_url": "https://www.youtube.com/watch?v=GNj7Oe8eq00",
-      "source": "spotdl",
-      "overridden": false
-    },
-    {
-      "spotify_id": "4aFIMli7GhMfRXdR17UjlA",
-      "artist": "AnnenMayKantereit",
-      "title": "Tommi",
-      "duration_s": 279,
-      "spotify_url": "https://open.spotify.com/track/4aFIMli7GhMfRXdR17UjlA",
-      "youtube_id": "26TRse93pAY",
-      "youtube_url": "https://www.youtube.com/watch?v=26TRse93pAY",
-      "source": "spotdl",
-      "overridden": false
-    },
-    {
       "spotify_id": "3TeuBnVsmXcoapr3SlBFIy",
       "artist": "AnnenMayKantereit",
       "title": "Oft gefragt",
@@ -186,13 +186,13 @@
       "overridden": false
     },
     {
-      "spotify_id": "21aT5lIYHjyBIFrXNbNY5U",
-      "artist": "Echt",
-      "title": "Du trägst keine Liebe in dir",
-      "duration_s": 261,
-      "spotify_url": "https://open.spotify.com/track/21aT5lIYHjyBIFrXNbNY5U",
-      "youtube_id": "n_idbaSHy2o",
-      "youtube_url": "https://www.youtube.com/watch?v=n_idbaSHy2o",
+      "spotify_id": "0UIJh1j0OqO7se1J3JeX1X",
+      "artist": "Ton Steine Scherben",
+      "title": "Halt dich an deiner Liebe fest",
+      "duration_s": 419,
+      "spotify_url": "https://open.spotify.com/track/0UIJh1j0OqO7se1J3JeX1X",
+      "youtube_id": "N7VXrWhTf20",
+      "youtube_url": "https://www.youtube.com/watch?v=N7VXrWhTf20",
       "source": "spotdl",
       "overridden": false
     },
@@ -202,8 +202,19 @@
       "title": "Easy",
       "duration_s": 173,
       "spotify_url": "https://open.spotify.com/track/3FwxpJdlexIR6MeTT56HAm",
-      "youtube_id": "7y6y6AAmr6Y",
-      "youtube_url": "https://www.youtube.com/watch?v=7y6y6AAmr6Y",
+      "youtube_id": null,
+      "youtube_url": null,
+      "source": null,
+      "overridden": false
+    },
+    {
+      "spotify_id": "21aT5lIYHjyBIFrXNbNY5U",
+      "artist": "Echt",
+      "title": "Du trägst keine Liebe in dir",
+      "duration_s": 261,
+      "spotify_url": "https://open.spotify.com/track/21aT5lIYHjyBIFrXNbNY5U",
+      "youtube_id": "n_idbaSHy2o",
+      "youtube_url": "https://www.youtube.com/watch?v=n_idbaSHy2o",
       "source": "spotdl",
       "overridden": false
     },
@@ -219,14 +230,14 @@
       "overridden": false
     },
     {
-      "spotify_id": "0UIJh1j0OqO7se1J3JeX1X",
-      "artist": "Ton Steine Scherben",
-      "title": "Halt dich an deiner Liebe fest",
-      "duration_s": 419,
-      "spotify_url": "https://open.spotify.com/track/0UIJh1j0OqO7se1J3JeX1X",
-      "youtube_id": "N7VXrWhTf20",
-      "youtube_url": "https://www.youtube.com/watch?v=N7VXrWhTf20",
-      "source": "spotdl",
+      "spotify_id": "55M8uEwBvW9VuPjPZJsGnA",
+      "artist": "Haftbefehl",
+      "title": "Chabos wissen wer der Babo ist",
+      "duration_s": 139,
+      "spotify_url": "https://open.spotify.com/track/55M8uEwBvW9VuPjPZJsGnA",
+      "youtube_id": null,
+      "youtube_url": null,
+      "source": null,
       "overridden": false
     },
     {
@@ -263,24 +274,13 @@
       "overridden": false
     },
     {
-      "spotify_id": "55M8uEwBvW9VuPjPZJsGnA",
-      "artist": "Haftbefehl",
-      "title": "Chabos wissen wer der Babo ist",
-      "duration_s": 139,
-      "spotify_url": "https://open.spotify.com/track/55M8uEwBvW9VuPjPZJsGnA",
-      "youtube_id": "whSR8IMXcng",
-      "youtube_url": "https://www.youtube.com/watch?v=whSR8IMXcng",
-      "source": "spotdl",
-      "overridden": false
-    },
-    {
-      "spotify_id": "2AXOg2WMjJt8Os7M3b589T",
-      "artist": "Haftbefehl",
-      "title": "Ich rolle mit meim Besten - Babos Remix",
-      "duration_s": 189,
-      "spotify_url": "https://open.spotify.com/track/2AXOg2WMjJt8Os7M3b589T",
-      "youtube_id": "_oj1X7meQ-I",
-      "youtube_url": "https://www.youtube.com/watch?v=_oj1X7meQ-I",
+      "spotify_id": "2GsdNfuxE4tHS1Hj5hfVVf",
+      "artist": "Nina Hagen",
+      "title": "Du hast den Farbfilm vergessen",
+      "duration_s": 181,
+      "spotify_url": "https://open.spotify.com/track/2GsdNfuxE4tHS1Hj5hfVVf",
+      "youtube_id": "sTHBLdXxelQ",
+      "youtube_url": "https://www.youtube.com/watch?v=sTHBLdXxelQ",
       "source": "spotdl",
       "overridden": false
     },
@@ -296,6 +296,17 @@
       "overridden": false
     },
     {
+      "spotify_id": "2AXOg2WMjJt8Os7M3b589T",
+      "artist": "Haftbefehl",
+      "title": "Ich rolle mit meim Besten - Babos Remix",
+      "duration_s": 189,
+      "spotify_url": "https://open.spotify.com/track/2AXOg2WMjJt8Os7M3b589T",
+      "youtube_id": null,
+      "youtube_url": null,
+      "source": null,
+      "overridden": false
+    },
+    {
       "spotify_id": "3jxxYgf0lK155eeuSO5sH1",
       "artist": "Lucilectric",
       "title": "Mädchen - Mädchen-Radio-Mix",
@@ -303,17 +314,6 @@
       "spotify_url": "https://open.spotify.com/track/3jxxYgf0lK155eeuSO5sH1",
       "youtube_id": "3seOou4qFyU",
       "youtube_url": "https://www.youtube.com/watch?v=3seOou4qFyU",
-      "source": "spotdl",
-      "overridden": false
-    },
-    {
-      "spotify_id": "2GsdNfuxE4tHS1Hj5hfVVf",
-      "artist": "Nina Hagen",
-      "title": "Du hast den Farbfilm vergessen",
-      "duration_s": 181,
-      "spotify_url": "https://open.spotify.com/track/2GsdNfuxE4tHS1Hj5hfVVf",
-      "youtube_id": "sTHBLdXxelQ",
-      "youtube_url": "https://www.youtube.com/watch?v=sTHBLdXxelQ",
       "source": "spotdl",
       "overridden": false
     },
