@@ -37,12 +37,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+
 import yaml
-from rapidfuzz import fuzz
 from spotdl import Spotdl
 from spotdl.types.song import Song
 from spotdl.utils.spotify import SpotifyClient
-from yt_dlp import YoutubeDL
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -50,9 +53,9 @@ DATA_DIR = REPO_ROOT / "data"
 DOCS_DIR = REPO_ROOT / "docs"
 OVERRIDES_DIR = REPO_ROOT / "overrides"
 
-VERIFY_FUZZ_THRESHOLD = 70
-VERIFY_DURATION_TOLERANCE_S = 3
 WATCH_VIDEOS_CAP = 50
+SONGLINK_API = "https://api.song.link/v1-alpha.1/links"
+SONGLINK_THROTTLE_S = 6.0  # ~10 req/min — sits under Songlink's free-tier rate limit
 
 # spotDL's bundled public Spotify app credentials. Safe to commit; spotDL itself ships them.
 SPOTDL_CLIENT_ID = "5f573c9620494bae87890c0f08a60293"
@@ -61,7 +64,13 @@ SPOTDL_CLIENT_SECRET = "212476d9b0f3472eaa762d90b19b0ba8"
 
 @dataclass
 class TrackEntry:
-    """A single mixtape row: Spotify source + matched YouTube + verification verdict."""
+    """A single mixtape row: Spotify source + matched YouTube + how we got there.
+
+    `source` indicates the matching path: `"songlink"` (canonical cross-platform
+    lookup), `"spotdl"` (search-based fallback, may pick a non-canonical upload),
+    `"override"` (manually pinned via overrides/<recipient>/<slug>.yaml), or
+    `None` when no match could be found.
+    """
 
     spotify_id: str
     artist: str
@@ -70,11 +79,7 @@ class TrackEntry:
     spotify_url: str
     youtube_id: str | None
     youtube_url: str | None
-    youtube_title: str | None
-    youtube_uploader: str | None
-    youtube_duration_s: int | None
-    verified: bool
-    verification_notes: list[str]
+    source: str | None
     overridden: bool
 
 
@@ -93,106 +98,64 @@ def youtube_id_from_url(url: str) -> str | None:
     return match.group(1) if match else None
 
 
-class _SilentYTDLogger:
-    """Discard everything yt-dlp tries to log.
+def songlink_youtube_url(spotify_track_url: str, timeout: float = 10.0) -> tuple[str | None, str]:
+    """Look up the canonical YouTube URL for a Spotify track via Songlink/Odesli.
 
-    YouTube actively challenges shared cloud IPs (notably GitHub Actions
-    runners) with bot-detection; without cookies the metadata fetch will
-    routinely fail. We treat those failures as "couldn't verify" and don't
-    flood CI logs with multi-line yt-dlp error blocks.
+    Songlink maps tracks across streaming platforms using ISRC + label metadata,
+    so the YouTube URL it returns is typically the canonical upload (Topic
+    channel / VEVO / artist channel) rather than a community lyric video.
+
+    Returns (url, status) — status is one of:
+        "ok"         — got a YouTube URL
+        "no-yt"      — track exists on Songlink but has no YouTube mapping
+        "rate-limit" — HTTP 429
+        "error"      — any other failure (network, JSON, etc.)
     """
-
-    def debug(self, _msg: str) -> None: ...
-    def info(self, _msg: str) -> None: ...
-    def warning(self, _msg: str) -> None: ...
-    def error(self, _msg: str) -> None: ...
-
-
-def fetch_youtube_metadata(video_id: str) -> dict[str, Any] | None:
-    """Fetch title, uploader, duration for a YouTube video. Returns None on failure.
-
-    On failure the caller's verification step marks the track as unverified;
-    we deliberately stay silent here so CI logs aren't drowned in bot-challenge
-    errors.
-    """
-    opts = {
-        "quiet": True,
-        "no_warnings": True,
-        "skip_download": True,
-        "extract_flat": False,
-        "logger": _SilentYTDLogger(),
-    }
+    params = urllib.parse.urlencode({"url": spotify_track_url})
+    request = urllib.request.Request(
+        f"{SONGLINK_API}?{params}",
+        headers={"User-Agent": "mixtapes-generator/0.1 (+https://github.com/webforte/mixtapes)"},
+    )
     try:
-        with YoutubeDL(opts) as ydl:
-            return ydl.extract_info(
-                f"https://www.youtube.com/watch?v={video_id}",
-                download=False,
-            )
-    except Exception:  # noqa: BLE001 — yt-dlp raises a wide range of errors
-        return None
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            data = json.loads(response.read().decode())
+    except urllib.error.HTTPError as exc:
+        return (None, "rate-limit" if exc.code == 429 else "error")
+    except Exception:  # noqa: BLE001
+        return (None, "error")
+
+    by_platform = data.get("linksByPlatform") or {}
+    # Prefer regular YouTube (compatible with watch_videos URLs); fall back to YT Music.
+    for key in ("youtube", "youtubeMusic"):
+        entry = by_platform.get(key) or {}
+        link = entry.get("url")
+        if link:
+            return (link, "ok")
+    return (None, "no-yt")
 
 
-_TITLE_DECORATION_PATTERNS = (
-    re.compile(r"\s*\(feat\.[^)]*\)", re.IGNORECASE),
-    re.compile(r"\s*\(with[^)]*\)", re.IGNORECASE),
-    re.compile(
-        r"\s*-\s*(Live|Remastered( \d{4})?|Remix|Single Version|Extended( Version)?|"
-        r"Mono|Stereo|Radio Edit|Acoustic|Demo|Deluxe Edition|Bonus Track).*$",
-        re.IGNORECASE,
-    ),
-)
+def load_previous_canonical_matches(recipient: str, slug: str) -> dict[str, str]:
+    """Read the previous manifest and return {spotify_id: youtube_id} for tracks that
+    were resolved canonically last time (via Songlink or an override).
 
-
-def strip_title_decorations(title: str) -> str:
-    """Remove `(feat. X)`, `- Live`, `- Remastered` etc. that Spotify adds but YouTube usually omits."""
-    cleaned = title
-    for pattern in _TITLE_DECORATION_PATTERNS:
-        cleaned = pattern.sub("", cleaned)
-    return cleaned.strip()
-
-
-def verify_match(
-    artist: str,
-    title: str,
-    duration_s: int,
-    yt_title: str,
-    yt_uploader: str,
-    yt_duration_s: int,
-) -> tuple[bool, list[str]]:
-    """Return (verified, notes). verified=True means every signal passed.
-
-    Heuristic:
-      - YouTube metadata must be present (yt-dlp fetch succeeded).
-      - Duration within tolerance — strongest single signal of "same recording".
-      - Track name (with Spotify decorations stripped) appears in YT title.
-      - Artist appears in YT title OR uploader — covers `Artist - Topic`,
-        `ArtistVEVO`, and self-uploaded channels uniformly.
+    Used to skip the Songlink API call on rerun — once a track has a canonical YT
+    mapping, it doesn't change, so caching it across runs keeps us well under
+    Songlink's rate limit even on large playlists.
     """
-    notes: list[str] = []
-
-    if not yt_title and not yt_uploader and not yt_duration_s:
-        notes.append("YouTube metadata unavailable — couldn't verify")
-        return (False, notes)
-
-    duration_delta = abs(yt_duration_s - duration_s)
-    if duration_delta > VERIFY_DURATION_TOLERANCE_S:
-        notes.append(f"duration off by {duration_delta}s")
-
-    cleaned_title = strip_title_decorations(title)
-    title_score = fuzz.token_set_ratio(cleaned_title.lower(), yt_title.lower())
-    if title_score < VERIFY_FUZZ_THRESHOLD:
-        notes.append(
-            f"track name '{cleaned_title}' not recognisable in YT title '{yt_title}' (fuzz={title_score:.0f})"
-        )
-
-    haystack = f"{yt_title} | {yt_uploader}".lower()
-    artist_score = fuzz.partial_ratio(artist.lower(), haystack)
-    if artist_score < VERIFY_FUZZ_THRESHOLD:
-        notes.append(
-            f"artist '{artist}' not found in YT title or uploader '{yt_uploader}' (fuzz={artist_score:.0f})"
-        )
-
-    return (len(notes) == 0, notes)
+    path = DATA_DIR / recipient / f"{slug}.json"
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text())
+    except Exception:  # noqa: BLE001
+        return {}
+    out: dict[str, str] = {}
+    for entry in data.get("tracks", []):
+        sp_id = entry.get("spotify_id")
+        yt_id = entry.get("youtube_id")
+        if sp_id and yt_id and entry.get("source") in {"songlink", "override"}:
+            out[sp_id] = yt_id
+    return out
 
 
 def load_overrides(recipient: str, slug: str) -> dict[str, str]:
@@ -264,62 +227,61 @@ def match_and_verify_songs(
     overrides = load_overrides(recipient, slug)
     if overrides:
         print(f"  applying {len(overrides)} override(s) from overrides/{recipient}/{slug}.yaml", flush=True)
+    cached = load_previous_canonical_matches(recipient, slug)
+    if cached:
+        print(f"  cached canonical matches from previous manifest: {len(cached)}", flush=True)
 
-    print("→ Matching tracks to YouTube…", flush=True)
+    print("→ Matching tracks to YouTube (Songlink → spotDL fallback)…", flush=True)
     entries: list[TrackEntry] = []
-    for index, song in enumerate(songs, start=1):
-        print(f"  [{index}/{len(songs)}] {song.artist} — {song.name}", flush=True)
+    last_songlink_call_at = 0.0  # for politely pacing live Songlink calls
 
+    for index, song in enumerate(songs, start=1):
         override_yt_id = overrides.get(song.song_id)
+        cached_yt_id = cached.get(song.song_id)
+        yt_id: str | None = None
+        source: str | None = None
+        status_tag = ""
+
         if override_yt_id:
             yt_id = override_yt_id
-            overridden = True
+            source = "override"
+            status_tag = "override"
+        elif cached_yt_id:
+            yt_id = cached_yt_id
+            source = "songlink"
+            status_tag = "cached"
         else:
-            # Run one song at a time so each URL pairs with its requested song.
-            # (spotDL's batch API uses concurrent.futures and returns in completion order.)
-            try:
-                single_url_results = spotdl.get_download_urls([song])
-            except Exception as exc:  # noqa: BLE001
-                logging.warning("spotDL match failed for %s: %s", song.song_id, exc)
-                single_url_results = []
-            raw_url = single_url_results[0] if single_url_results else None
-            yt_id = youtube_id_from_url(raw_url if isinstance(raw_url, str) else "")
-            overridden = False
+            # Pace API calls to stay under Songlink's free-tier rate limit.
+            wait = SONGLINK_THROTTLE_S - (time.monotonic() - last_songlink_call_at)
+            if last_songlink_call_at and wait > 0:
+                time.sleep(wait)
+            songlink_url, songlink_status = songlink_youtube_url(song.url)
+            last_songlink_call_at = time.monotonic()
 
-        if not yt_id:
-            entries.append(
-                TrackEntry(
-                    spotify_id=song.song_id,
-                    artist=song.artist,
-                    title=song.name,
-                    duration_s=song.duration,
-                    spotify_url=song.url,
-                    youtube_id=None,
-                    youtube_url=None,
-                    youtube_title=None,
-                    youtube_uploader=None,
-                    youtube_duration_s=None,
-                    verified=False,
-                    verification_notes=["no YouTube match found"],
-                    overridden=overridden,
-                )
-            )
-            continue
+            yt_id = youtube_id_from_url(songlink_url) if songlink_url else None
+            if yt_id:
+                source = "songlink"
+                status_tag = "songlink"
+            else:
+                # spotDL's batch API uses concurrent.futures and returns out of order,
+                # so we always call it one song at a time.
+                try:
+                    single_url_results = spotdl.get_download_urls([song])
+                except Exception as exc:  # noqa: BLE001
+                    logging.warning("spotDL match failed for %s: %s", song.song_id, exc)
+                    single_url_results = []
+                raw_url = single_url_results[0] if single_url_results else None
+                yt_id = youtube_id_from_url(raw_url if isinstance(raw_url, str) else "")
+                if yt_id:
+                    source = "spotdl"
+                    status_tag = f"spotdl ({songlink_status})"
+                else:
+                    status_tag = f"no match ({songlink_status})"
 
-        meta = fetch_youtube_metadata(yt_id)
-        yt_title = (meta or {}).get("title", "") or ""
-        yt_uploader = (meta or {}).get("uploader", "") or ""
-        yt_duration = int((meta or {}).get("duration") or 0)
-
-        verified, notes = verify_match(
-            song.artist, song.name, song.duration,
-            yt_title, yt_uploader, yt_duration,
+        print(
+            f"  [{index}/{len(songs)}] {song.artist} — {song.name}  [{status_tag}]",
+            flush=True,
         )
-        if overridden:
-            # Manual pins are trusted by definition; record the note but mark verified.
-            notes = [n for n in notes]
-            verified = True
-            notes.insert(0, "manually overridden")
 
         entries.append(
             TrackEntry(
@@ -329,13 +291,9 @@ def match_and_verify_songs(
                 duration_s=song.duration,
                 spotify_url=song.url,
                 youtube_id=yt_id,
-                youtube_url=f"https://www.youtube.com/watch?v={yt_id}",
-                youtube_title=yt_title,
-                youtube_uploader=yt_uploader,
-                youtube_duration_s=yt_duration or None,
-                verified=verified,
-                verification_notes=notes,
-                overridden=overridden,
+                youtube_url=f"https://www.youtube.com/watch?v={yt_id}" if yt_id else None,
+                source=source,
+                overridden=(source == "override"),
             )
         )
 
@@ -517,8 +475,10 @@ def generate_one(
 
     entries = match_and_verify_songs(spotdl, songs, recipient, resolved_slug)
 
-    verified_count = sum(1 for e in entries if e.verified)
-    needs_review = len(entries) - verified_count
+    canonical = sum(1 for e in entries if e.source in {"songlink", "override"})
+    best_effort = sum(1 for e in entries if e.source == "spotdl")
+    no_match = sum(1 for e in entries if e.source is None)
+    needs_review = best_effort + no_match
 
     manifest_path = write_manifest(
         entries, recipient, resolved_slug, spotify_url, resolved_title, playlist_meta,
@@ -530,11 +490,15 @@ def generate_one(
     md_path.parent.mkdir(parents=True, exist_ok=True)
     md_path.write_text(md)
 
-    print(f"  ✓ verified: {verified_count}    ⚠ needs review: {needs_review}")
+    print(
+        f"  ✓ canonical: {canonical}    "
+        f"~ best-effort: {best_effort}    "
+        f"✗ no match: {no_match}"
+    )
     print(f"  → {manifest_path.relative_to(REPO_ROOT)}")
     print(f"  → {md_path.relative_to(REPO_ROOT)}")
 
-    return recipient, verified_count, needs_review
+    return recipient, canonical, needs_review
 
 
 def generate_from_config(config_path: Path) -> int:
@@ -601,7 +565,10 @@ def main() -> None:
 
     if total_review:
         print()
-        print(f"⚠ {total_review} track(s) need review — see the 'Needs review' section in the generated MD pages.")
+        print(
+            f"~ {total_review} track(s) came from a best-effort spotDL match or had no match — "
+            "spot-check the manifest JSON before sharing."
+        )
 
 
 if __name__ == "__main__":
