@@ -361,7 +361,6 @@ def render_mixtape_md(
     """Render the per-mixtape Markdown page for the recipient (verification UI is kept in the JSON manifest, not here)."""
     meta = playlist_metadata or {}
     image_url = meta.get("image_url") or ""
-    display_recipient = " ".join(word.capitalize() for word in recipient.split("-")) or recipient
 
     lines: list[str] = [
         "---",
@@ -375,15 +374,13 @@ def render_mixtape_md(
         lines.append("")
     lines.append(f"# {title}")
     lines.append("")
-    lines.append(f"_Curated for **{display_recipient}**._")
-    lines.append("")
 
     yt_ids = [e.youtube_id for e in entries if e.youtube_id]
     actions: list[str] = []
     if yt_ids:
         watch_ids = yt_ids[:WATCH_VIDEOS_CAP]
         watch_url = "https://www.youtube.com/watch_videos?video_ids=" + ",".join(watch_ids)
-        actions.append(f"**▶ [Play on YouTube]({watch_url})**")
+        actions.append(f"**[Play on YouTube]({watch_url})**")
     actions.append(f"[Open on Spotify]({spotify_url})")
     lines.append(" · ".join(actions))
     lines.append("")
@@ -401,14 +398,16 @@ def render_mixtape_md(
     )
     lines.append("")
 
-    lines.append("| # | Artist | Title | Duration |   |")
-    lines.append("|---|--------|-------|----------|---|")
+    # Track title links to the matched YouTube video when available — drops the
+    # separate "YouTube" column with its ▶ glyph for a quieter row.
+    lines.append("| # | Artist | Title | Duration |")
+    lines.append("|---|--------|-------|----------|")
     for i, e in enumerate(entries, start=1):
-        yt_cell = f"[▶]({e.youtube_url})" if e.youtube_url else "—"
         artist = e.artist.replace("|", "\\|")
-        track = e.title.replace("|", "\\|")
+        raw_track = e.title.replace("|", "\\|")
+        track_cell = f"[{raw_track}]({e.youtube_url})" if e.youtube_url else raw_track
         lines.append(
-            f"| {i} | {artist} | {track} | {format_duration(e.duration_s)} | {yt_cell} |"
+            f"| {i} | {artist} | {track_cell} | {format_duration(e.duration_s)} |"
         )
 
     lines.append("")
